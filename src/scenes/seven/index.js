@@ -62,6 +62,11 @@ class home extends Component {
       ],
     };
   }
+  onSelect(item) {
+   // this.props.navigation.navigate('Methal');
+   Alert.alert('بتشتغل لوحدك ليه');
+  }
+
   
   FlatListItemSeparator = () => {
     return (
@@ -86,7 +91,7 @@ class home extends Component {
           height: '100%',
           opacity: 100,
         }}>
-       <Text style={styles.title}>العقيدة</Text> 
+       <Text style={styles.title}>سلسلة أخلاق عباد الرحمن</Text> 
       <FlatList
           
           data={this.state.FlatListItems}

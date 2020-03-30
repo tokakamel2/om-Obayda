@@ -86,7 +86,7 @@ class home extends Component {
           height: '100%',
           opacity: 100,
         }}>
-       <Text style={styles.title}>العقيدة</Text> 
+       <Text style={styles.title}>أعمال القلوب</Text> 
       <FlatList
           
           data={this.state.FlatListItems}

@@ -21,21 +21,28 @@ class home extends Component {
       FlatListItems: [
         {name:'الفقه', id:'one'},
         {name:'العقيدة', id:'two'},
-        {name:'السيرة',id:3},
-        {name:'التفسير',id:4},
-        {name:'الأربعون النووية', id:5},
-        {name:'سلسلة المرأة الصالحة', id:6},
-        {name:'سلسلة الدار الآخرة', id:7},
-        {name:'أمراض القلوب',id:8},
-        {name:'أعمال القلوب',id:0},
+        {name:'الثلاثون النسائية',id:'three'},
+        {name:'التفسير',id:'four'},
+        {name:'تصحيح التلاوة', id:'five'},
+        {name:'سلسلة المرأة الصالحة', id:'six'},
+        {name:'سلسلة أخلاق عباد الرحمن', id:'seven'},
+        {name:'أمراض القلوب',id:'eight'},
+        {name:'أعمال القلوب',id:'nine'},
+        {name:'سير الصحابيات',id:'ten'},
+        {name:'سير الصحابة',id:'eleven'},
+        {name:'يا بنت الإسلام أطيعي الله ورسوله',id:'twelve'},
+        {name:'الداعيات إلى الله', id:'thirteen'},
+        {name:'حلية طالب العلم', id:'fourteen'},
+        {name:'صفات داعية', id:'fifteen'},
+        {name:'صحيح البخاري', id:'sixteen'},
+        {name:'أسماء الله الحسنى', id:'seventeen'},
+        {name:'استشارات', id:'eighteen'},
         
+
       ],
     };
   }
-  onSelect(item) {
-    this.props.navigation.navigate('two');
-   Alert.alert('بتشتغل لوحدك ليه');
-  }
+  
 
   
   FlatListItemSeparator = () => {
@@ -117,7 +124,8 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'ArbFONTS-Monadi',
     fontSize: 30,
-    color:'#633e5a'
+    color:'#633e5a',
+    textAlign:'center'
     
   },
   email: {
