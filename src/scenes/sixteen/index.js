@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
+import Accordian from '_atoms/Accordian.js'
 
 class home extends Component {
   constructor(props) {
@@ -100,16 +101,12 @@ class home extends Component {
           renderItem={({item}) =>(
          
           <View style={styles.flatview}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.text}>{item.text}</Text>
-         { item.path &&  <Image
-          source={item.path}
-          style={{height:250, width:250}}
-        ></Image>}
-
-       {item.audiPath && <PlayerScreen filepath={item.audiPath}/>}
-      
-
+            <Accordian
+                  data={[{key: item.text}]}
+                  title={item.name}
+                  path={item.path}
+                  playerScreen={item.audiPath}
+                />
          
           </View>
          

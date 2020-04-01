@@ -13,20 +13,63 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
+import Accordian from '_atoms/Accordian.js'
 
 class home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       FlatListItems: [
-        {name:'الدرس الأول', id:'one',audiPath:'https://gdurl.com/3rMO',path:require('_assets/images/1/1.jpg') ,text:'واليوم مع الدرس الاول من الفقة 📃👆🏻نتكلم  فية عن ادب الخلاف !?ولماذا يختلف العلماء ? وماذا نفعل لو راينا حكم فية اكثر من راى  !!وإلــيـــكِ أسـئلــة الـدرس📃👇🏻1-🔅 لماذا يوجد بعض الاختلافات بين اهل العلم؟  2-🔅 ماهو ادب الخلاف ؟3- 🔅ماهى اقسام الاختلاف المعتبر وغير المعتبر  مع بعض الامثله ؟4🔅- مالذى استفدتيه من هذا الدرس ؟حلى الاسئلة مع نفسك ليثبت العلم لديكى👍🏻 وتختبرى نفسك اسمعي  وانشرى 👆🏻👍  🌹🎀🌹 #الدرس_الاول_فقه'},
-        {name:'الدرس الثاني', id:'two'},
-        {name:'الدرس الثالث',id:3},
-        {name:'الدرس الرابع',id:4},
-        {name:'الدرس الخامس', id:5},
-        {name:'الدرس السادس', id:6},
-        {name:'الدرس السابع', id:7},
-        {name:'الدرس الثامن',id:8},
+        {name:'الدرس الأول', id:1,audiPath:'https://gdurl.com/3rMO',path:require('_assets/images/1/1.jpg') ,text:'واليوم مع الدرس الاول من الفقة 📃👆🏻نتكلم  فية عن ادب الخلاف !?ولماذا يختلف العلماء ? وماذا نفعل لو راينا حكم فية اكثر من راى  !!وإلــيـــكِ أسـئلــة الـدرس📃👇🏻1-🔅 لماذا يوجد بعض الاختلافات بين اهل العلم؟  2-🔅 ماهو ادب الخلاف ؟3- 🔅ماهى اقسام الاختلاف المعتبر وغير المعتبر  مع بعض الامثله ؟4🔅- مالذى استفدتيه من هذا الدرس ؟حلى الاسئلة مع نفسك ليثبت العلم لديكى👍🏻 وتختبرى نفسك اسمعي  وانشرى 👆🏻👍  🌹🎀🌹 #الدرس_الاول_فقه'},
+        {
+          name: 'الدرس الثاني',
+          id: 2,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '2',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس الثالث',
+          id: 3,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '3',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس الرابع',
+          id: 4,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '4',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس الخامس',
+          id: 5,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '5',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس السادس',
+          id: 6,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '6',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس السابع',
+          id: 7,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '7',
+          path: require('_assets/images/1/1.jpg'),
+        },
+        {
+          name: 'الدرس الثامن',
+          id: 8,
+          audiPath: 'https://gdurl.com/3rMO',
+          text: '8',
+          path: require('_assets/images/1/1.jpg'),
+        },
         {name:'الدرس التاسع',id:9},
         {name:'الدرس العاشر',id:10},
         {name:'الدرس الحادي عشر',id:11},
@@ -95,16 +138,12 @@ class home extends Component {
           renderItem={({item}) =>(
          
           <View style={styles.flatview}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.text}>{item.text}</Text>
-         { item.path &&  <Image
-          source={item.path}
-          style={{height:250, width:250}}
-        ></Image>}
-
-       {item.audiPath && <PlayerScreen filepath={item.audiPath}/>}
-      
-
+           <Accordian
+                  data={[{key: item.text}]}
+                  title={item.name}
+                  path={item.path}
+                  playerScreen={item.audiPath}
+                />
          
           </View>
          
