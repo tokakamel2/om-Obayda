@@ -22,6 +22,18 @@ import seventeen from '_scenes/seventeen';
 import eighteen from '_scenes/eighteen';
 import nineteen from '_scenes/nineteen';
 import twenty from '_scenes/twenty';
+import twentyone from '_scenes/twentyone';
+import twentytwo from '_scenes/twentytwo';
+
+import tafs1 from '_scenes/tafs1';
+import tafs2 from '_scenes/tafs2';
+import tafs3 from '_scenes/tafs3';
+import tafs4 from '_scenes/tafs4';
+import tafs5 from '_scenes/tafs5';
+import tafs6 from '_scenes/tafs6';
+import tafs7 from '_scenes/tafs7';
+import tafs8 from '_scenes/tafs8';
+
 const TabNavigatorConfig = {
   initialRouteName: 'Home',
   header: null,
@@ -132,6 +144,58 @@ const RouteConfigs = {
     headerMode: 'none',
     header: null,
   },
+  twentyone: {
+    screen: twentyone,
+    headerMode: 'none',
+    header: null,
+  },
+  twentytwo: {
+    screen: twentytwo,
+    headerMode: 'none',
+    header: null,
+  },
+  
+  tafs1: {
+    screen: tafs1,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs2: {
+    screen: tafs2,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs3: {
+    screen: tafs3,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs4: {
+    screen: tafs4,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs5: {
+    screen: tafs5,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs6: {
+    screen: tafs6,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs7: {
+    screen: tafs7,
+    headerMode: 'none',
+    header: null,
+  },
+  tafs8: {
+    screen: tafs8,
+    headerMode: 'none',
+    header: null,
+  },
+
 
 };
 

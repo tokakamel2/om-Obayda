@@ -23,84 +23,64 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'سورة الذاريات',
           id: 1,
-          audiPath: 'https://gdurl.com/PM0h',
-          path: require('_assets/images/1/1.jpg'),
+          audiPath: 'https://gdurl.com/Mevp',
+          audiPath2:'https://gdurl.com/1kgI',
+          audiPath3:'https://gdurl.com/BiJH',
+          audiPath4:'https://gdurl.com/XrIs',
           isOpend: false,
+          
           },
         {
-          name: 'الدرس الثاني',
+          name: 'سورة الطور',
           id: 2,
-          audiPath: 'https://gdurl.com/cZJW',
+          audiPath: 'https://gdurl.com/Ze_B',
+          audiPath2: 'https://gdurl.com/w_Qo',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'سورة النجم',
           id: 3,
-          audiPath: 'https://gdurl.com/R5zW',
+          audiPath: 'https://gdurl.com/x3mQ',
+          audiPath2: 'https://gdurl.com/Tiso',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'سورة القمر',
           id: 4,
-          audiPath: 'https://gdurl.com/MXgh',
-          text: '4',
+          audiPath: 'https://gdurl.com/ZNw3',
+          audiPath2: 'https://gdurl.com/qVfN',
+          audiPath3: 'https://gdurl.com/I2mI',
+    
         },
         {
-          name: 'الدرس الخامس',
+          name: 'سورة الرحمن',
           id: 5,
-          audiPath: 'https://gdurl.com/tL-IR',
-          text: '5',
+          audiPath: 'https://gdurl.com/E0lk',
+          audiPath2: 'https://gdurl.com/GRz2m',
+          audiPath3: 'https://gdurl.com/s1_2',
+          audiPath4: 'https://gdurl.com/kvMN',
         },
         {
-          name: 'الدرس السادس',
+          name: 'سورة الواقعة',
           id: 6,
-          audiPath: 'https://gdurl.com/JG3j',
-          text: '6',
-          path: require('_assets/images/1/6.jpg'),
+          audiPath: 'https://gdurl.com/muLV',
+          audiPath2: 'https://gdurl.com/dGeU',
+         
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'سورة الحديد',
           id: 7,
-          audiPath: 'https://gdurl.com/gMVJ',
-          text: '7',
+          audiPath: 'https://gdurl.com/CtNuq',
+          audiPath2: 'https://gdurl.com/Byia',
+          audiPath3: 'https://gdurl.com/QPmz',
         },
-        {
-          name: 'الدرس الثامن',
-          id: 8,
-          audiPath: 'https://gdurl.com/LoGZ',
-          text: '8',
-        },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/Kf7i',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
-        id:10,
-        audiPath: 'https://gdurl.com/AkQ7',
-        text: '8',
-        },
-        {name:'الدرس الحادي عشر',
-        id:11,
-        audiPath: 'https://gdurl.com/QdSq',
-        text: '8',
-        },
-        {name:'الدرس الثاني عشر',
-        id:12,
-        audiPath: 'https://gdurl.com/IrCu',
-        audiPath2: 'https://gdurl.comظTBZi',
-        text: '8',
-        },
-        {name:'الدرس الثالث عشر',
-        id:13,
-        audiPath: 'https://gdurl.com/QE8k',
-        text: '8',
-        path: require('_assets/images/1/13.jpg'),
-      },
- 
+       
+     
+       
       ],
     };
   }
@@ -139,7 +119,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>سلسلة المرأة الصالحة</Text>
+          <Text style={styles.title}>تفسير جزء الذاريات</Text>
 
           <FlatList
             data={this.state.FlatListItems}
@@ -153,7 +133,10 @@ class home extends Component {
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>

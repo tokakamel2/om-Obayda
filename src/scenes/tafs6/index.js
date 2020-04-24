@@ -23,84 +23,70 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'سورة المجادلة',
           id: 1,
-          audiPath: 'https://gdurl.com/PM0h',
-          path: require('_assets/images/1/1.jpg'),
+          audiPath: 'https://gdurl.com/zjFs',
+          audiPath2:'https://gdurl.com/lHtV',
           isOpend: false,
+          
+          },
+          {
+            name: 'سورة الحشر',
+            id: 2,
+            audiPath: 'https://gdurl.com/RHwE',
+            audiPath2: 'https://gdurl.com/Rc6z',
+          
+           
           },
         {
-          name: 'الدرس الثاني',
+          name: 'سورة الممتحنة',
           id: 2,
-          audiPath: 'https://gdurl.com/cZJW',
+          audiPath: 'https://gdurl.com/vsyC',
+          audiPath2: 'https://gdurl.com/1dXO',
+          audiPath3: 'https://gdurl.com/JwoK',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'سورة الصف',
           id: 3,
-          audiPath: 'https://gdurl.com/R5zW',
+          audiPath: 'https://gdurl.com/lBPz',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'سورة الجمعة',
           id: 4,
-          audiPath: 'https://gdurl.com/MXgh',
-          text: '4',
+          audiPath: 'https://gdurl.com/gTvav',
+    
         },
         {
-          name: 'الدرس الخامس',
+          name: 'سورة المنافقون',
           id: 5,
-          audiPath: 'https://gdurl.com/tL-IR',
-          text: '5',
+          audiPath: 'https://gdurl.com/CLro',
+     
         },
         {
-          name: 'الدرس السادس',
+          name: 'سورة التغابن',
           id: 6,
-          audiPath: 'https://gdurl.com/JG3j',
-          text: '6',
-          path: require('_assets/images/1/6.jpg'),
+          audiPath: 'https://gdurl.com/m43X',
+         
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'سورة الطلاق',
           id: 7,
-          audiPath: 'https://gdurl.com/gMVJ',
-          text: '7',
+          audiPath: 'https://gdurl.com/ZX23',
+    
         },
         {
-          name: 'الدرس الثامن',
-          id: 8,
-          audiPath: 'https://gdurl.com/LoGZ',
-          text: '8',
+          name: 'سورة التحريم',
+          id: 7,
+          audiPath: 'https://gdurl.com/JFNv',
+        
         },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/Kf7i',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
-        id:10,
-        audiPath: 'https://gdurl.com/AkQ7',
-        text: '8',
-        },
-        {name:'الدرس الحادي عشر',
-        id:11,
-        audiPath: 'https://gdurl.com/QdSq',
-        text: '8',
-        },
-        {name:'الدرس الثاني عشر',
-        id:12,
-        audiPath: 'https://gdurl.com/IrCu',
-        audiPath2: 'https://gdurl.comظTBZi',
-        text: '8',
-        },
-        {name:'الدرس الثالث عشر',
-        id:13,
-        audiPath: 'https://gdurl.com/QE8k',
-        text: '8',
-        path: require('_assets/images/1/13.jpg'),
-      },
- 
+       
+     
+       
       ],
     };
   }
@@ -139,7 +125,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>سلسلة المرأة الصالحة</Text>
+          <Text style={styles.title}>تفسير جزء قد سمع</Text>
 
           <FlatList
             data={this.state.FlatListItems}
@@ -153,7 +139,10 @@ class home extends Component {
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>

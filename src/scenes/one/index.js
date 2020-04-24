@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'ArbFONTS-Monadi',
     fontSize: 28,
-    color: '#633e5a',
+    color: '#371921',
     paddingBottom: 20,
   },
   title: {

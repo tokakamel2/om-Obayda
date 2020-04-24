@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import {
   View,
@@ -13,60 +14,27 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian.js'
 
 class home extends Component {
-  constructor(props) {
-    super(props);
+  constructor(prpos) {
+    super(prpos);
     this.state = {
       FlatListItems: [
-        {name:'الدرس الأول', id:'one',audiPath:'https://gdurl.com/3rMO',path:require('_assets/images/1/1.jpg') ,text:'واليوم مع الدرس الاول من الفقة 📃👆🏻نتكلم  فية عن ادب الخلاف !?ولماذا يختلف العلماء ? وماذا نفعل لو راينا حكم فية اكثر من راى  !!وإلــيـــكِ أسـئلــة الـدرس📃👇🏻1-🔅 لماذا يوجد بعض الاختلافات بين اهل العلم؟  2-🔅 ماهو ادب الخلاف ؟3- 🔅ماهى اقسام الاختلاف المعتبر وغير المعتبر  مع بعض الامثله ؟4🔅- مالذى استفدتيه من هذا الدرس ؟حلى الاسئلة مع نفسك ليثبت العلم لديكى👍🏻 وتختبرى نفسك اسمعي  وانشرى 👆🏻👍  🌹🎀🌹 #الدرس_الاول_فقه'},
-        {name:'الدرس الثاني', id:'two'},
-        {name:'الدرس الثالث',id:3},
-        {name:'الدرس الرابع',id:4},
-        {name:'الدرس الخامس', id:5},
-        {name:'الدرس السادس', id:6},
-        {name:'الدرس السابع', id:7},
-        {name:'الدرس الثامن',id:8},
-        {name:'الدرس التاسع',id:9},
-        {name:'الدرس العاشر',id:10},
-        {name:'الدرس الحادي عشر',id:11},
-        {name:'الدرس الثاني عشر',id:12},
-        {name:'الدرس الثالث عشر',id:13},
-        {name:'الدرس الرابع عشر',id:14},
-        {name:'الدرس الخامس عشر',id:15},
-        {name:'الدرس السادس عشر',id:16},
-        {name:'الدرس السابع عشر',id:17},
-        {name:'الدرس الثامن عشر',id:18},
-        {name:'الدرس التاسع عشر',id:19},
-        {name:'الدرس العشرون',id:20},
-        {name:'الدرس الواحد والعشرون',id:21},
-        {name:'الدرس الثاني والعشرون',id:22},
-        {name:'الدرس الثالث والعشرون',id:23},
-        {name:'الدرس الرابع والعشرون',id:24},
-        {name:'الدرس الخامس والعشرون',id:25},
-        {name:'الدرس السادس والعشرون',id:26},
-        {name:'الدرس السابع والعشرون',id:27},
-        {name:'الدرس الثامن والعشرون',id:28},
-        {name:'الدرس التاسع والعشرون',id:29},
-        {name:'الدرس الثلاثون',id:30},
-        {name:'الدرس الواحد والثلاثون',id:31},
-        {name:'الدرس الثاني والثلاثون',id:32},
-        {name:'الدرس الثالث والثلاثون',id:33},
-        {name:'الدرس الرابع والثلاثون',id:34},
-        {name:'الدرس الخامس والثلاثون',id:35},
-        {name:'الدرس السادس والثلاثون',id:36},
-        {name:'الدرس السابع والثلاثون',id:37},
-        {name:'الدرس الثامن والثلاثون',id:38},
+        {name:'تفسير سورة البقرة', id:'tafs1'}, //done
+        {name:'سورة آل عمران', id:'tafs2'}, //done
+        {name:'سورة النساء',id:'tafs3'}, //done
+        {name:'سورة النور',id:'tafs4'},  //done
+        {name:'جزء الذاريات', id:'tafs5'}, //done
+        {name:'جزء قد سمع', id:'tafs6'}, //done
+        {name:'جزء تبارك', id:'tafs7'}, //done
+        {name:'جزء عم',id:'tafs8'},
+     
         
-        
+
       ],
     };
   }
-  onSelect(item) {
-   // this.props.navigation.navigate('Methal');
-   Alert.alert('بتشتغل لوحدك ليه');
-  }
+  
 
   
   FlatListItemSeparator = () => {
@@ -84,7 +52,6 @@ class home extends Component {
   render() {
     return (
       <View>
-      
       <ImageBackground
         source={require('_assets/images/islamic-pattern.jpg')}
         style={{
@@ -92,26 +59,20 @@ class home extends Component {
           height: '100%',
           opacity: 100,
         }}>
-       <Text style={styles.title}>التفسير</Text> 
+      
       <FlatList
           
           data={this.state.FlatListItems}
           showsVerticalScrollIndicator={false}
         
-          renderItem={({item}) =>(
-         
+          renderItem={({item}) =>
+          <TouchableOpacity   onPress={() => this.props.navigation.navigate(item.id)}  >
           <View style={styles.flatview}>
-             <Accordian
-                  data={[{key: item.text}]}
-                  title={item.name}
-                  path={item.path}
-                  playerScreen={item.audiPath}
-                />
+            <Text style={styles.name}>{item.name}</Text>
+            
           </View>
-         
-          )
-      
-      }
+          </TouchableOpacity>
+        }
          
           keyExtractor={item => item.id}
        
@@ -154,22 +115,10 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: 'ArbFONTS-Monadi',
-    fontSize: 28,
+    fontSize: 30,
     color:'#633e5a',
-    paddingBottom:20
-    
-  },
-  title: {
-    fontFamily: 'ArbFONTS-Monadi',
-    fontSize: 45,
-    color:'#ffff',
-    paddingBottom:0,
     textAlign:'center'
     
-  },
-  text:{
-    fontSize: 20,
-    paddingBottom:10
   },
   email: {
     color: 'red'

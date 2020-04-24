@@ -23,84 +23,71 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'الربع الأول',
           id: 1,
-          audiPath: 'https://gdurl.com/PM0h',
-          path: require('_assets/images/1/1.jpg'),
+          audiPath: 'https://gdurl.com/bovG',
           isOpend: false,
+          
           },
         {
-          name: 'الدرس الثاني',
+          name: 'الربع الثاني',
           id: 2,
-          audiPath: 'https://gdurl.com/cZJW',
+          audiPath: 'https://gdurl.com/d0y1',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'الربع الثالث',
           id: 3,
-          audiPath: 'https://gdurl.com/R5zW',
+          audiPath: 'https://gdurl.com/NVqp',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'الربع الرابع',
           id: 4,
-          audiPath: 'https://gdurl.com/MXgh',
-          text: '4',
+          audiPath: 'https://gdurl.com/BHTM',
         },
         {
-          name: 'الدرس الخامس',
+          name: 'الربع الخامس',
           id: 5,
-          audiPath: 'https://gdurl.com/tL-IR',
-          text: '5',
+          audiPath: 'https://gdurl.com/OVJ0',
         },
         {
-          name: 'الدرس السادس',
+          name: 'الربع السادس',
           id: 6,
-          audiPath: 'https://gdurl.com/JG3j',
-          text: '6',
-          path: require('_assets/images/1/6.jpg'),
+          audiPath: 'https://gdurl.com/vg3H',
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'الربع السابع',
           id: 7,
-          audiPath: 'https://gdurl.com/gMVJ',
-          text: '7',
+          audiPath: 'https://gdurl.com/yiiu',
         },
         {
-          name: 'الدرس الثامن',
+          name: 'الربع الثامن',
           id: 8,
-          audiPath: 'https://gdurl.com/LoGZ',
-          text: '8',
+          audiPath: 'https://gdurl.com/wznZ',
+          audiPath2:'https://gdurl.com/aDQl',
         },
-        {name:'الدرس التاسع',
+        {name:'الربع التاسع',
         id:9,
-        audiPath: 'https://gdurl.com/Kf7i',
-        text: '8',
+        audiPath: 'https://gdurl.com/fAKv',
+       
         },
-        {name:'الدرس العاشر',
+        {name:'الربع العاشر',
         id:10,
-        audiPath: 'https://gdurl.com/AkQ7',
-        text: '8',
+        audiPath: 'https://gdurl.com/ZJ1I',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'الربع الحادي عشر',
         id:11,
-        audiPath: 'https://gdurl.com/QdSq',
-        text: '8',
+        audiPath: 'https://gdurl.com/17ur',
         },
-        {name:'الدرس الثاني عشر',
+        {name:'ختم سورة آل عمران',
         id:12,
-        audiPath: 'https://gdurl.com/IrCu',
-        audiPath2: 'https://gdurl.comظTBZi',
-        text: '8',
+        audiPath: 'https://gdurl.com/mpL9',
         },
-        {name:'الدرس الثالث عشر',
-        id:13,
-        audiPath: 'https://gdurl.com/QE8k',
-        text: '8',
-        path: require('_assets/images/1/13.jpg'),
-      },
- 
+     
+       
       ],
     };
   }
@@ -139,7 +126,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>سلسلة المرأة الصالحة</Text>
+          <Text style={styles.title}>تفسير سورة آل عمران</Text>
 
           <FlatList
             data={this.state.FlatListItems}

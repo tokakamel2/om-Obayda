@@ -18,10 +18,11 @@ class home extends Component {
   constructor(prpos) {
     super(prpos);
     this.state = {
+      wait: true,
       FlatListItems: [
-        {name:'الفقه', id:'one'},
-        {name:'العقيدة', id:'two'},
-        {name:'الثلاثون النسائية',id:'three'},
+        {name:'الفقه', id:'one'}, //done voice
+        {name:'العقيدة', id:'two'}, //done voice
+        {name:'الثلاثون النسائية',id:'three'},//DONE ALL
         {name:'التفسير',id:'four'},
         {name:'تصحيح التلاوة', id:'five'},
         {name:'سلسلة المرأة الصالحة', id:'six'},
@@ -31,19 +32,27 @@ class home extends Component {
         {name:'سير الصحابيات',id:'ten'},
         {name:'سير الصحابة',id:'eleven'},
         {name:'يا بنت الإسلام أطيعي الله ورسوله',id:'twelve'},
-        {name:'الداعيات إلى الله', id:'thirteen'},
-        {name:'حلية طالب العلم', id:'fourteen'},
-        {name:'صفات داعية', id:'fifteen'},
+        {name:'دروس الداعيات', id:'thirteen'},
+        {name:'الأربعون النووية', id:'fourteen'},
+        {name:'تدريب داعية', id:'fifteen'},
         {name:'صحيح البخاري', id:'sixteen'},
         {name:'أسماء الله الحسنى', id:'seventeen'},
-        {name:'استشارات', id:'eighteen'},
+        {name:'سأبدأ من جديد بقلب محب ودود', id:'nineteen'},
+        {name:'سلسلة أصول الوصول', id:'twenty'},
+        {name:'سلسلة الحقوق الإسلامية', id:'twentyone'},
+        {name:'كيف أفوز برمضان', id:'twentytwo'},
+        {name:'فتاوى المرأة المسلمة', id:'eighteen'},
         
 
       ],
     };
   }
   
-
+  componentDidMount() {
+    setTimeout(() => {
+    this.setState({wait:false})
+    }, 5000);
+  }
   
   FlatListItemSeparator = () => {
     return (
@@ -59,7 +68,9 @@ class home extends Component {
 
   render() {
     return (
+      
       <View>
+      {  !this.state.wait && 
       <ImageBackground
         source={require('_assets/images/islamic-pattern.jpg')}
         style={{
@@ -88,6 +99,18 @@ class home extends Component {
        />
        
       </ImageBackground>
+  }
+{this.state.wait && 
+<ImageBackground
+source={require('_assets/images/logo2.png')}
+style={{
+  width: '100%',
+  height: '100%',
+  opacity: 100,
+}}
+>
+  
+  </ImageBackground>}
       </View>
     );
   }

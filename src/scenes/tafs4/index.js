@@ -23,84 +23,67 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'مقاصد سورة النور وأهدافها',
           id: 1,
-          audiPath: 'https://gdurl.com/PM0h',
-          path: require('_assets/images/1/1.jpg'),
+          audiPath: 'https://gdurl.com/1qyeJ',
           isOpend: false,
+          
           },
         {
-          name: 'الدرس الثاني',
+          name: 'من 1 إلى 10',
           id: 2,
-          audiPath: 'https://gdurl.com/cZJW',
+          audiPath: 'https://gdurl.com/MgTo',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'من 11 إلى 20',
           id: 3,
-          audiPath: 'https://gdurl.com/R5zW',
+          audiPath: 'https://gdurl.com/N49u',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'من 21 إلى 22',
           id: 4,
-          audiPath: 'https://gdurl.com/MXgh',
-          text: '4',
+          audiPath: 'https://gdurl.com/U4_Z',
         },
         {
-          name: 'الدرس الخامس',
+          name: 'من 23 إلى 29',
           id: 5,
-          audiPath: 'https://gdurl.com/tL-IR',
-          text: '5',
+          audiPath: 'https://gdurl.com/JF3D',
         },
         {
-          name: 'الدرس السادس',
+          name: 'من 30 إلى 32',
           id: 6,
-          audiPath: 'https://gdurl.com/JG3j',
-          text: '6',
-          path: require('_assets/images/1/6.jpg'),
+          audiPath: 'https://gdurl.com/mWp3',
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'من 32 إلى 34',
           id: 7,
-          audiPath: 'https://gdurl.com/gMVJ',
-          text: '7',
+          audiPath: 'https://gdurl.com/TZ4W',
         },
         {
-          name: 'الدرس الثامن',
+          name: 'من 35 إلى 42',
           id: 8,
-          audiPath: 'https://gdurl.com/LoGZ',
-          text: '8',
+          audiPath: 'https://gdurl.com/t2B6',
         },
-        {name:'الدرس التاسع',
+        {name:'من 43 إلى 46',
         id:9,
-        audiPath: 'https://gdurl.com/Kf7i',
-        text: '8',
+        audiPath: 'https://gdurl.com/7ANY',
+       
         },
-        {name:'الدرس العاشر',
+        {name:'من 47 إلى 56',
         id:10,
-        audiPath: 'https://gdurl.com/AkQ7',
-        text: '8',
+        audiPath: 'https://gdurl.com/umUw',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'من 57 إلى 64',
         id:11,
-        audiPath: 'https://gdurl.com/QdSq',
-        text: '8',
+        audiPath: 'https://gdurl.com/s9MU',
         },
-        {name:'الدرس الثاني عشر',
-        id:12,
-        audiPath: 'https://gdurl.com/IrCu',
-        audiPath2: 'https://gdurl.comظTBZi',
-        text: '8',
-        },
-        {name:'الدرس الثالث عشر',
-        id:13,
-        audiPath: 'https://gdurl.com/QE8k',
-        text: '8',
-        path: require('_assets/images/1/13.jpg'),
-      },
- 
+       
+     
+       
       ],
     };
   }
@@ -139,7 +122,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>سلسلة المرأة الصالحة</Text>
+          <Text style={styles.title}>تفسير سورة النور </Text>
 
           <FlatList
             data={this.state.FlatListItems}
