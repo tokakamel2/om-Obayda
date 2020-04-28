@@ -23,74 +23,85 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'سورة الملك',
           id: 1,
-          audiPath: 'https://gdurl.com/eaW0',
-          audiPath2: 'https://gdurl.com/SQjb',
+          audiPath: 'https://gdurl.com/S6vP',
+          audiPath2:'https://gdurl.com/j0hf',
+      
           isOpend: false,
           
           },
         {
-          name: 'الدرس الثاني',
+          name: 'سورة القلم',
           id: 2,
-          audiPath: 'https://gdurl.com/blvG',
+          audiPath: 'https://gdurl.com/N3ZT',
+          audiPath2: 'https://gdurl.com/41Kv',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'سورة الحاقة',
           id: 3,
-          audiPath: 'https://gdurl.com/IsSz',
-          audiPath2: 'https://gdurl.com/2baB',
+          audiPath: 'https://gdurl.com/AsXt',
+          audiPath2: 'https://gdurl.com/ufug',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'سورة المعارج',
           id: 4,
-          audiPath: 'https://gdurl.com/1BwB',
-          text: '4',
+          audiPath: 'https://gdurl.com/hdd4',
+          audiPath2: 'https://gdurl.com/Pq_0',
+    
         },
         {
-          name: 'الدرس الخامس',
+          name: 'سورة نوح',
           id: 5,
-          audiPath: 'https://gdurl.com/uT0F',
-          text: '5',
+          audiPath: 'https://gdurl.com/Q61X',
+          audiPath2: 'https://gdurl.com/Ln2m',
+     
         },
         {
-          name: 'الدرس السادس',
+          name: 'سورة الجن',
           id: 6,
-          audiPath: 'https://gdurl.com/hatX',
-          text: '6',
+          audiPath: 'https://gdurl.com/deli',
+          audiPath2: 'https://gdurl.com/tCBw',
+         
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'سورة المزمل',
           id: 7,
-          audiPath: 'https://gdurl.com/UrlP',
-          text: '7',
+          audiPath: 'https://gdurl.com//Md6G',
+
         },
         {
-          name: 'الدرس الثامن',
-          id: 8,
-          audiPath: 'https://gdurl.com/R61Q',
-          text: '8',
-        },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/xGgw',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
-        id:10,
-        audiPath: 'https://gdurl.com/pFkg',
-        text: '8',
-        },
-        {name:'الدرس الحادي عشر',
-        id:11,
-        audiPath: 'https://gdurl.com/TqA28',
-        text: '8',
-        },
- 
+          name: 'سورة المدثر',
+          id: 7,
+          audiPath: 'https://gdurl.com/tbNd',
+          audiPath2: 'https://gdurl.com/gXXUe',
 
+     
+        },
+        {
+          name: 'سورة القيامة',
+          id: 7,
+          audiPath: 'https://gdurl.com/mDaI',
+        },
+        {
+          name: 'سورة الإنسان',
+          id: 7,
+          audiPath: 'https://gdurl.com/2a32',
+          audiPath2: 'https://gdurl.com/TBeQ',
+        },
+        {
+          name: 'سورة المرسلات',
+          id: 7,
+          audiPath: 'https://gdurl.com/wNWN',
+    
+        },
+       
+     
+       
       ],
     };
   }
@@ -129,7 +140,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>أعمال القلوب</Text>
+          <Text style={styles.title}>تصحيح جزء تبارك</Text>
 
           <FlatList
             data={this.state.FlatListItems}
@@ -143,7 +154,10 @@ class home extends Component {
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>

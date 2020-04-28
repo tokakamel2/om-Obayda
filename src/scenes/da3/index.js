@@ -22,75 +22,43 @@ class home extends Component {
     super(props);
     this.state = {
       FlatListItems: [
+    
         {
           name: 'الدرس الأول',
-          id: 1,
-          audiPath: 'https://gdurl.com/eaW0',
-          audiPath2: 'https://gdurl.com/SQjb',
-          isOpend: false,
-          
-          },
+          id: 6,
+          audiPath: 'https://gdurl.com/8XZ5',
+         
+         
+         
+        },
         {
           name: 'الدرس الثاني',
-          id: 2,
-          audiPath: 'https://gdurl.com/blvG',
-        
-         
+          id: 7,
+          audiPath: 'https://gdurl.com/ACqws',
+
         },
         {
           name: 'الدرس الثالث',
-          id: 3,
-          audiPath: 'https://gdurl.com/IsSz',
-          audiPath2: 'https://gdurl.com/2baB',
-         
+          id: 7,
+          audiPath: 'https://gdurl.com/D5jd',
+        
+
+     
         },
         {
           name: 'الدرس الرابع',
-          id: 4,
-          audiPath: 'https://gdurl.com/1BwB',
-          text: '4',
+          id: 7,
+          audiPath: 'https://gdurl.com/DsYQ',
+
+     
         },
         {
           name: 'الدرس الخامس',
-          id: 5,
-          audiPath: 'https://gdurl.com/uT0F',
-          text: '5',
-        },
-        {
-          name: 'الدرس السادس',
-          id: 6,
-          audiPath: 'https://gdurl.com/hatX',
-          text: '6',
-        },
-        {
-          name: 'الدرس السابع',
           id: 7,
-          audiPath: 'https://gdurl.com/UrlP',
-          text: '7',
-        },
-        {
-          name: 'الدرس الثامن',
-          id: 8,
-          audiPath: 'https://gdurl.com/R61Q',
-          text: '8',
-        },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/xGgw',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
-        id:10,
-        audiPath: 'https://gdurl.com/pFkg',
-        text: '8',
-        },
-        {name:'الدرس الحادي عشر',
-        id:11,
-        audiPath: 'https://gdurl.com/TqA28',
-        text: '8',
+          audiPath: 'https://gdurl.com/nkn4',
         },
  
-
+       
       ],
     };
   }
@@ -129,7 +97,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>أعمال القلوب</Text>
+          <Text style={styles.title}>صفات الداعية</Text>
 
           <FlatList
             data={this.state.FlatListItems}
@@ -143,7 +111,10 @@ class home extends Component {
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>

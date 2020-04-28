@@ -23,25 +23,25 @@ class home extends Component {
         {name:'الفقه', id:'one'}, //done voice
         {name:'العقيدة', id:'two'}, //done voice
         {name:'الثلاثون النسائية',id:'three'},//DONE ALL
-        {name:'التفسير',id:'four'},
-        {name:'تصحيح التلاوة', id:'five'},
-        {name:'سلسلة المرأة الصالحة', id:'six'},
-        {name:'سلسلة أخلاق عباد الرحمن', id:'seven'},
-        {name:'أمراض القلوب',id:'eight'},
-        {name:'أعمال القلوب',id:'nine'},
-        {name:'سير الصحابيات',id:'ten'},
-        {name:'سير الصحابة',id:'eleven'},
-        {name:'يا بنت الإسلام أطيعي الله ورسوله',id:'twelve'},
+        {name:'التفسير',id:'four'}, //DONE ALL
+        {name:'تصحيح التلاوة', id:'five'},  //DONE
+        {name:'سلسلة المرأة الصالحة', id:'six'}, //done voice and img
+        {name:'سلسلة أخلاق عباد الرحمن', id:'seven'}, // done voice
+        {name:'أمراض القلوب',id:'eight'},  //done voice
+        {name:'أعمال القلوب',id:'nine'}, //done voice
+        {name:'سير الصحابيات',id:'ten'}, //DONE 
+        {name:'سير الصحابة',id:'eleven'},  //DONE
+        {name:'يا بنت الإسلام أطيعي الله ورسوله',id:'twelve'}, //done voice
         {name:'دروس الداعيات', id:'thirteen'},
-        {name:'الأربعون النووية', id:'fourteen'},
-        {name:'تدريب داعية', id:'fifteen'},
-        {name:'صحيح البخاري', id:'sixteen'},
-        {name:'أسماء الله الحسنى', id:'seventeen'},
-        {name:'سأبدأ من جديد بقلب محب ودود', id:'nineteen'},
-        {name:'سلسلة أصول الوصول', id:'twenty'},
-        {name:'سلسلة الحقوق الإسلامية', id:'twentyone'},
-        {name:'كيف أفوز برمضان', id:'twentytwo'},
-        {name:'فتاوى المرأة المسلمة', id:'eighteen'},
+        {name:'الأربعون النووية', id:'fourteen'}, //DONE 
+        {name:'تدريب داعية', id:'fifteen'},   //DONE
+        {name:'صحيح البخاري', id:'sixteen'},  //done voice
+        {name:'أسماء الله الحسنى', id:'seventeen'},//DONE
+        {name:'سأبدأ من جديد بقلب محب ودود', id:'nineteen'},//DONE
+        {name:'سلسلة أصول الوصول', id:'twenty'}, //done voice
+        {name:'سلسلة الحقوق الإسلامية', id:'twentyone'},//DONE
+        {name:'كيف أفوز برمضان', id:'twentytwo'}, //DONE
+        {name:'فتاوى المرأة المسلمة', id:'eighteen'}, //done voice
         
 
       ],

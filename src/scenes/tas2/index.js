@@ -22,75 +22,135 @@ class home extends Component {
     super(props);
     this.state = {
       FlatListItems: [
+    
         {
-          name: 'الدرس الأول',
-          id: 1,
-          audiPath: 'https://gdurl.com/eaW0',
-          audiPath2: 'https://gdurl.com/SQjb',
-          isOpend: false,
-          
-          },
-        {
-          name: 'الدرس الثاني',
-          id: 2,
-          audiPath: 'https://gdurl.com/blvG',
-        
-         
-        },
-        {
-          name: 'الدرس الثالث',
-          id: 3,
-          audiPath: 'https://gdurl.com/IsSz',
-          audiPath2: 'https://gdurl.com/2baB',
-         
-        },
-        {
-          name: 'الدرس الرابع',
-          id: 4,
-          audiPath: 'https://gdurl.com/1BwB',
-          text: '4',
-        },
-        {
-          name: 'الدرس الخامس',
-          id: 5,
-          audiPath: 'https://gdurl.com/uT0F',
-          text: '5',
-        },
-        {
-          name: 'الدرس السادس',
+          name: 'سورة الإنشقاق',
           id: 6,
-          audiPath: 'https://gdurl.com/hatX',
-          text: '6',
+          audiPath: 'https://gdurl.com/ufm9',
+         
+         
+         
         },
         {
-          name: 'الدرس السابع',
+          name: 'سورة البروج',
           id: 7,
-          audiPath: 'https://gdurl.com/UrlP',
-          text: '7',
+          audiPath: 'https://gdurl.com/z0pt',
+
         },
         {
-          name: 'الدرس الثامن',
-          id: 8,
-          audiPath: 'https://gdurl.com/R61Q',
-          text: '8',
-        },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/xGgw',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
-        id:10,
-        audiPath: 'https://gdurl.com/pFkg',
-        text: '8',
-        },
-        {name:'الدرس الحادي عشر',
-        id:11,
-        audiPath: 'https://gdurl.com/TqA28',
-        text: '8',
-        },
- 
+          name: 'سورة الطارق',
+          id: 7,
+          audiPath: 'https://gdurl.com/E2IZ',
+          audiPath2: 'https://gdurl.com/HPVR',
 
+     
+        },
+        {
+          name: 'سورة الأعلى',
+          id: 7,
+          audiPath: 'https://gdurl.com/1-W5',
+          audiPath2: 'https://gdurl.com/Z77I',
+
+     
+        },
+        {
+          name: 'سورة الغاشية',
+          id: 7,
+          audiPath: 'https://gdurl.com/e6I7',
+        },
+        {
+          name: 'سورة الفجر',
+          id: 7,
+          audiPath: 'https://gdurl.com/4Mlt',
+        },
+        {
+          name: 'سورة البلد',
+          id: 7,
+          audiPath: 'https://gdurl.com/LCQW',
+    
+        },
+       
+        {
+          name: 'سورة الشمس',
+          id: 7,
+          audiPath: 'https://gdurl.com/T8bm',
+    
+        },
+        {
+          name: 'سورة الليل',
+          id: 7,
+          audiPath: 'https://gdurl.com/B8Fc',
+    
+        },
+        {
+          name: 'سورة الضحى',
+          id: 7,
+          audiPath: 'https://gdurl.com/BU_8',
+    
+        },
+        {
+          name: 'سورة الشرح',
+          id: 7,
+          audiPath: 'https://gdurl.com/8s22',
+    
+        },
+        {
+          name: 'سورة التين و القدر',
+          id: 7,
+          audiPath: 'https://gdurl.com/6lCZ',
+    
+        },
+        {
+          name: ' سورة العلق ',
+          id: 7,
+          audiPath: 'https://gdurl.com/d1j7',
+    
+        },
+        {
+          name: 'سورة البينة',
+          id: 7,
+          audiPath: 'https://gdurl.com/93dD',
+    
+        },
+        {
+          name: 'سورة الزلزلة و العاديات',
+          id: 7,
+          audiPath: 'https://gdurl.com/Yt9q',
+    
+        },
+        {
+          name: 'سورة القارعة والتكاثر',
+          id: 7,
+          audiPath: 'https://gdurl.com/Qoeoc',
+    
+        },
+        {
+          name: 'سورة العصر و الهمزة والفيل',
+          id: 7,
+          audiPath: 'https://gdurl.com/mMyQ',
+    
+        },
+     
+        {
+          name: 'سورة قريش والماعون والكوثر',
+          id: 7,
+          audiPath: 'https://gdurl.com/iOuc',
+    
+        },
+        {
+          name: 'سورة الكافرون والنصر والمسد',
+          id: 7,
+          audiPath: 'https://gdurl.com/EuMg',
+    
+        },
+        {
+          name: 'سورة الإخلاص الفلق والناس',
+          id: 7,
+          audiPath: 'https://gdurl.com/8Drm',
+    
+        },
+     
+       
       ],
     };
   }
@@ -129,7 +189,7 @@ class home extends Component {
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>أعمال القلوب</Text>
+          <Text style={styles.title}>تصحيح جزء عم</Text>
 
           <FlatList
             data={this.state.FlatListItems}
@@ -143,7 +203,10 @@ class home extends Component {
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>

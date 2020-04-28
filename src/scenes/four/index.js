@@ -27,7 +27,7 @@ class home extends Component {
         {name:'جزء الذاريات', id:'tafs5'}, //done
         {name:'جزء قد سمع', id:'tafs6'}, //done
         {name:'جزء تبارك', id:'tafs7'}, //done
-        {name:'جزء عم',id:'tafs8'},
+        {name:'جزء عم',id:'tafs8'}, //done
      
         
 

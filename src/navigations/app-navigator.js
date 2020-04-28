@@ -34,6 +34,14 @@ import tafs6 from '_scenes/tafs6';
 import tafs7 from '_scenes/tafs7';
 import tafs8 from '_scenes/tafs8';
 
+import tas1 from '_scenes/tas1';
+import tas2 from '_scenes/tas2';
+
+
+import da1 from '_scenes/da1';
+import da2 from '_scenes/da2';
+import da3 from '_scenes/da3';
+
 const TabNavigatorConfig = {
   initialRouteName: 'Home',
   header: null,
@@ -195,7 +203,31 @@ const RouteConfigs = {
     headerMode: 'none',
     header: null,
   },
-
+  tas1: {
+    screen: tas1,
+    headerMode: 'none',
+    header: null,
+  },
+  tas2: {
+    screen: tas2,
+    headerMode: 'none',
+    header: null,
+  },
+  da1: {
+    screen: da1,
+    headerMode: 'none',
+    header: null,
+  },
+  da2: {
+    screen: da2,
+    headerMode: 'none',
+    header: null,
+  },
+  da3: {
+    screen: da3,
+    headerMode: 'none',
+    header: null,
+  },
 
 };
 
