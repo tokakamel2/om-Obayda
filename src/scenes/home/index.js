@@ -9,14 +9,19 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  SafeAreaView
+  SafeAreaView,
+  AsyncStorage,
+  localStorage
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
 
+
+
 class home extends Component {
   constructor(prpos) {
     super(prpos);
+  
     this.state = {
       wait: true,
       FlatListItems: [
@@ -46,14 +51,46 @@ class home extends Component {
 
       ],
     };
-  }
+ 
   
+  }
+ 
+check =async()=>{   
+  const firstTime= await AsyncStorage.getItem('firstTime')
+  console.log(firstTime)
+  ok=async()=>{
+  const value =await AsyncStorage.setItem('firstTime', 'false')  
+  console.log(value)
+}
+    if (firstTime == 'True' ){
+    console.log(firstTime)
+    Alert.alert(
+      "تنبيه هام",
+      "هذا التطبيق للنساء فقط وممنوع سماع صوت المعلمة للرجال وهذه أمانة",
+      [
+        
+        { text: "موافق", onPress: () => ok()
+      
+      }
+      
+      ],
+      { cancelable: false }
+    );
+    }
+    }
+
+
+
   componentDidMount() {
+    this.check()
     setTimeout(() => {
     this.setState({wait:false})
     }, 5000);
   }
-  
+ 
+ 
+
+
   FlatListItemSeparator = () => {
     return (
       <View
@@ -67,6 +104,7 @@ class home extends Component {
   };
 
   render() {
+
     return (
       
       <View>

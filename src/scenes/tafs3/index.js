@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'ArbFONTS-Monadi',
     fontSize: 45,
-    color: '#ffff',
+    color: '#371921',
     paddingBottom: 0,
     textAlign: 'center',
   },

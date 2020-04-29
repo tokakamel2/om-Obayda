@@ -644,11 +644,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#371921',
     paddingBottom: 20,
+    
   },
   title: {
     fontFamily: 'ArbFONTS-Monadi',
     fontSize: 45,
-    color: '#ffff',
+    color: '#371921',
     paddingBottom: 0,
     textAlign: 'center',
   },
