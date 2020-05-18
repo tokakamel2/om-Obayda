@@ -5,26 +5,30 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
-  TouchableOpacity,
+
   ImageBackground,
   StyleSheet,
-  SafeAreaView,
+  
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       FlatListItems: [
+        {
+          name: '',
+          id: 2,
+         path:require('_assets/images/da3/1.jpg'),
+        },
     
         {
-          name: 'الدرس الأول',
+          name: 'صفات الداعية  في القران في سورة المدثر',
           id: 6,
           audiPath: 'https://gdurl.com/8XZ5',
          
@@ -32,13 +36,13 @@ class home extends Component {
          
         },
         {
-          name: 'الدرس الثاني',
+          name: 'صفات الداعية في القران في سورة الغاشية ',
           id: 7,
           audiPath: 'https://gdurl.com/ACqws',
 
         },
         {
-          name: 'الدرس الثالث',
+          name: 'صفات الداعية في سورة فصلت اية 33',
           id: 7,
           audiPath: 'https://gdurl.com/D5jd',
         
@@ -46,14 +50,14 @@ class home extends Component {
      
         },
         {
-          name: 'الدرس الرابع',
+          name: 'صفات الداعية في سورة الأحزاب اية 39',
           id: 7,
           audiPath: 'https://gdurl.com/DsYQ',
 
      
         },
         {
-          name: 'الدرس الخامس',
+          name: 'صفات الداعية في سورة نوح عليه السلام',
           id: 7,
           audiPath: 'https://gdurl.com/nkn4',
         },
@@ -98,7 +102,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>صفات الداعية</Text>
-
+          <ScrollView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -108,8 +112,7 @@ class home extends Component {
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+            {item.audiPath && <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
             {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
@@ -122,6 +125,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+         </ScrollView> 
         </ImageBackground>
       </View>
     );

@@ -24,6 +24,9 @@ import nineteen from '_scenes/nineteen';
 import twenty from '_scenes/twenty';
 import twentyone from '_scenes/twentyone';
 import twentytwo from '_scenes/twentytwo';
+import twentythree from '_scenes/twentythree';
+import twentyfour from '_scenes/twentyfour';
+import twentyfive from '_scenes/twentyfive';
 
 import tafs1 from '_scenes/tafs1';
 import tafs2 from '_scenes/tafs2';
@@ -36,11 +39,13 @@ import tafs8 from '_scenes/tafs8';
 
 import tas1 from '_scenes/tas1';
 import tas2 from '_scenes/tas2';
-
+import alf from '_scenes/alf';
 
 import da1 from '_scenes/da1';
 import da2 from '_scenes/da2';
 import da3 from '_scenes/da3';
+
+
 
 const TabNavigatorConfig = {
   initialRouteName: 'Home',
@@ -51,6 +56,9 @@ const TabNavigatorConfig = {
 const RouteConfigs = {
   Home:{
     screen:HomeScreen,
+  },
+  about:{
+    screen:AboutScreen,
   },
   one: {
     screen: one,
@@ -225,6 +233,26 @@ const RouteConfigs = {
   },
   da3: {
     screen: da3,
+    headerMode: 'none',
+    header: null,
+  },
+  twentythree: {
+    screen: twentythree,
+    headerMode: 'none',
+    header: null,
+  },
+  twentyfour: {
+    screen: twentyfour,
+    headerMode: 'none',
+    header: null,
+  },
+  twentyfive: {
+    screen: twentyfive,
+    headerMode: 'none',
+    header: null,
+  },
+  alf: {
+    screen: alf,
     headerMode: 'none',
     header: null,
   },

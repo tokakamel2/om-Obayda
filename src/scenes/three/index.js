@@ -5,17 +5,15 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
-  TouchableOpacity,
+ TouchableOpacity,
   ImageBackground,
   StyleSheet,
   SafeAreaView,
-  
+  Linking
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
 
 class home extends Component {
   constructor(props) {
@@ -190,8 +188,13 @@ class home extends Component {
         path: require('_assets/images/3/29.jpg'),
         path2: require('_assets/images/3/30.jpg'),
       },
+     
         
-      
+      {
+        name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+        url:'https://forms.gle/dzbsLwbJz1oMxrgC9'
+      },
+      {name:''},
   
       ],
     };
@@ -232,7 +235,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>الثلاثون النسائية</Text>
-
+          <SafeAreaView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -242,17 +245,18 @@ class home extends Component {
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+             {item.audiPath && <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
-               
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+      
               </View>
             )}
             
             keyExtractor={item => item.id}
           />
+          </SafeAreaView>
         </ImageBackground>
       </View>
     );

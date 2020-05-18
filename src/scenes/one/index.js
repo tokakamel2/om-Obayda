@@ -5,238 +5,298 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
   SafeAreaView,
+  Linking
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+
 
 class home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state =
+     { myResourceContent: 'not loaded yet',
       FlatListItems: [
+        { name:'',
+        path: require('_assets/images/1/0.jpeg')}, 
+        
         {
-          name: 'الدرس الأول',
+          name: 'لماذا يختلف العلماء ?',
           id: 1,
           audiPath: 'https://gdurl.com/3rMO',
-          path: require('_assets/images/1/1.jpg'),
+         
           isOpend: false,
-          text:
-            'واليوم مع الدرس الاول من الفقة 📃👆🏻نتكلم  فية عن ادب الخلاف !?ولماذا يختلف العلماء ? وماذا نفعل لو راينا حكم فية اكثر من راى  !!وإلــيـــكِ أسـئلــة الـدرس📃👇🏻1-🔅 لماذا يوجد بعض الاختلافات بين اهل العلم؟  2-🔅 ماهو ادب الخلاف ؟3- 🔅ماهى اقسام الاختلاف المعتبر وغير المعتبر  مع بعض الامثله ؟4🔅- مالذى استفدتيه من هذا الدرس ؟حلى الاسئلة مع نفسك ليثبت العلم لديكى👍🏻 وتختبرى نفسك اسمعي  وانشرى 👆🏻👍  🌹🎀🌹 #الدرس_الاول_فقه',
           },
         {
-          name: 'الدرس الثاني',
+          name: 'ماهو الفقة ?',
           id: 2,
           audiPath: 'https://gdurl.com/vLMz',
           text: 'وهذا هو الدرس الثانى⏫ من دروس الفقه ? وهو ثمره علم الفقه ! وماهو الفقة ? وكيف اصل للفهم فى دينى وامور عده مهم تهمك 👍🏻 اسمعى وانشرى لكل النساء🌸🌸🌸 #الدرس_الثاني_فقه',
         
          
         },
+        { name:'',
+        path: require('_assets/images/1/1.jpg')}, 
         {
-          name: 'الدرس الثالث',
+          name: 'باب فقة طهارة المياة',
           id: 3,
           audiPath: 'https://gdurl.com/qOS7',
+         
           text: 'اسئلة ✒️ لدرس الثالث من الفقة لباب فقة طهارة المياة💦💦 مسائل ✒ 1-*- امرأه اخذت الماء الذى شربت منه الهره وتوضأت منه ماالحكم؟2-*- امرأه بال عليها طفل ماالحكم مع الدليل؟ 3-*- هل سؤر الكافر نجس ؟  صــ☑️ـــح ام خــطـ✖️ـــأ1-وقع صابون فى الماء فغيرت شكلة يصح للوضؤ لأن الصابون طاهر (      ) 2- استعملت ماء فأخذت بعدى هذا الماء الفاضل بقية استعمالى وتوضئتى به لانه يجوز الماء المستعمل (     ) 3- حصان شربت من الماء فذهبت وغيرت الماء وقلت انه لايجوز  استعماله    (     )          4- غيرت كل ملابسها وتوضأت لأن طفل عمرة شهر بال عليها هل فعلها صحيح (   )اختبرى نفسك بعد سماع الدرس😊 #الدرس_الثالث_فقه',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'باب الآنية',
           id: 4,
           audiPath: 'https://gdurl.com/F9B2',
           text: '4',
         },
         {
-          name: 'الدرس الخامس',
+          name: 'قضاء الحاجه وادابها',
           id: 5,
           audiPath: 'https://gdurl.com/40iF',
           text: '5',
         },
+        { name:'',
+        path: require('_assets/images/1/6.jpg')}, 
         {
-          name: 'الدرس السادس',
+          name: 'الباب الرابع باب ( السواك وسنن الفطره )',
           id: 6,
           audiPath: 'https://gdurl.com/2lAh',
           text: '6',
-          path: require('_assets/images/1/6.jpg'),
+          
         },
         {
-          name: 'الدرس السابع',
+          name: 'باب الوضوء',
           id: 7,
           audiPath: 'https://gdurl.com/6sxm',
           text: '7',
         },
+        {name:'الوضوء الصحيح بالفيديو',
+        vid:'https://youtu.be/K3WcrVH82yI',
+         },
+         {name:'أخطاء الوضوء فيديو',
+         vid:'https://youtu.be/1Xx3J7Lw1yo',
+          },
         {
-          name: 'الدرس الثامن',
+          name: 'باب المسح على الخفين',
           id: 8,
           audiPath: 'https://gdurl.com/fjR6',
           text: '8',
         },
-        {name:'الدرس التاسع',
+        {name:'باب الغسل',
         id:9,
         audiPath: 'https://gdurl.com/wjdl',
         audiPath2:'https://gdurl.com//E7zu',
         text: '8',
         },
-        {name:'الدرس العاشر',
+        {name:'باب التيمم',
         id:10,
         audiPath: 'https://gdurl.com/rVPJ',
         text: '8',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'كيفيه تطهير النجاسات',
         id:11,
         audiPath: 'https://gdurl.com/2MmU',
         text: '8',
         },
-        {name:'الدرس الثاني عشر',
+        {name:'مسائل الحيض والاستحاضه والنفاس',
         id:12,
         audiPath: 'https://gdurl.com/eqob',
         text: '8',
+        path: require('_assets/images/1/12.jpeg')
         },
-        {name:'الدرس الثالث عشر',
+        { name:'',
+        path: require('_assets/images/1/13.jpeg')}, 
+        {name:'الخشوع ف الصلاه',
         id:13,
         audiPath: 'https://gdurl.com/Pbxw',
         text: '8',
-        path: require('_assets/images/1/13.jpg'),
+      
       },
-        {name:'الدرس الرابع عشر',
+        {name:'باب الأذان',
         id:14,
         audiPath: 'https://gdurl.com/uilB',
         text: '8',
         
       },
-        {name:'الدرس الخامس عشر',
+        {name:'مواقيت الصلاه ',
         id:15,
         audiPath: 'https://gdurl.com/hkF1',
         text: '8',
       },
-        {name:'الدرس السادس عشر',
+        {name:'شروط صحة الصلاة',
         id:16,
         audiPath: 'https://gdurl.com/havc',
         text: '8',
       },
-      { name:'الدرس السابع عشر',
+      {name:'الصلاة الصحيحة بالفيديو',
+      vid:'https://youtu.be/1Xx3J7Lw1yo',
+       },
+       {name:'صفة صلاة الرسول بالفيديو',
+      vid:'https://youtu.be/OE7OBxvLp14',
+       },
+       {name:'أخطاء الصلاة بالفيديو',
+       vid:'https://youtu.be/iDZC8zsh_f04',
+        },
+        {name:'أخطاء الصلاة',
+        vid:'https://youtu.be/5RlXvvJTT5g',
+         },
+      { name:'اركان الصلاة ووجباتها وسننها',
         id:17,
         audiPath: 'https://gdurl.com/uQ8lD',
         text: '8',
       },
-        {name:'الدرس الثامن عشر',
+        {name:'مبطلات الصلاة',
         id:18,
         audiPath: 'https://gdurl.com/7tNJ',
         text: '8',
       },
-        {name:'الدرس التاسع عشر',
+        {name:'باب صلاة التطوع ',
         id:19,
         audiPath: 'https://gdurl.com/onr1',
         text: '8',
 
       },
-        {name:'الدرس العشرون',
+        {name:'باقى درس صلاة التطوع',
         id:20,
         audiPath: 'https://gdurl.com/n2CG',
         text: '8',
       },
-        {name:'الدرس الواحد والعشرون',
+        {name:'سجود السهو',
         id:21,
         audiPath: 'https://gdurl.com/bdGQ',
         text: '8',
       },
-        {name:'الدرس الثاني والعشرون',
+        {name:'سجدة التلاوه وسجدة الشكر وعن صلاة الجماعه ',
         id:22,
         audiPath: 'https://gdurl.com/xCpw',
         text: '8',
       },
-        {name:'الدرس الثالث والعشرون',
+        {name:' الامامه ف الصلاه ',
         id:23,
         audiPath: 'https://gdurl.com/jv43',
         text: '8',
       },
-        {name:'الدرس الرابع والعشرون',
+        {name:'باب صلاة الاعذار',
         id:24,
         audiPath: 'https://gdurl.com/Q6Ci',
         text: '8',
       },
-        {name:'الدرس الخامس والعشرون',
+        {name:'احكام صلاة الجمعه',
         id:25,
         audiPath: 'https://gdurl.com/M7c1',
         text: '8',
       },
-        {name:'الدرس السادس والعشرون',
+        {name:'(( *صلاة الخوف وصلاة الكسوف وصلاه الإستسقاء  وصلاة العيدين* )) ',
         id:26,
         audiPath: 'https://gdurl.com/Ic9W',
         text: '8',
       },
-        {name:'الدرس السابع والعشرون',
+        {name:'باب الجنائز',
         id:27,
         audiPath: 'https://gdurl.com/no1bw',
         text: '8',
       },
-        {name:'الدرس الثامن والعشرون',
+        {name:'تكملة باب الجنائز',
         id:28,
         audiPath: 'https://gdurl.com/5074',
         text: '8',
       },
-        {name:'الدرس التاسع والعشرون',
+      { name:'',
+        path: require('_assets/images/1/29.jpeg'),},
+
+
+        {name:'اجر الصوم وفوائد الصيام وصيام المتقين',
         id:29,
         audiPath: 'https://gdurl.com/53Cj',
         text: '8',
-        path: require('_assets/images/1/29.jpg'),
       },
-        {name:'الدرس الثلاثون',
+        {name:'أركان الصوم ونية الصوم ومعنى إيماناً واحتساباً',
         id:30,
         audiPath: 'https://gdurl.com/h7GV',
         text: '8',
       },
-        {name:'الدرس الواحد والثلاثون',
+        {name:'مسائل في فقه الصيام',
         id:31,
         audiPath: 'https://gdurl.com/s7cy',
         text: '8',
       },
-        {name:'الدرس الثاني والثلاثون',
+        {name:'مسائل في فقه الصيام2',
         id:32,
         audiPath: 'https://gdurl.com/sLid',
         text: '8',
       },
-        {name:'الدرس الثالث والثلاثون',
+        {name:'مستحبات الصيام -ومكروهاته - والإعتكاف',
         id:33,
         audiPath: 'https://gdurl.com/JBeR',
         audiPath2:'https://gdurl.com/HrujO',
         text: '8',
       },
-        {name:'الدرس الرابع والثلاثون',
+      { name:'',
+      path: require('_assets/images/1/34.jpeg')}, 
+        {name:'فقه الزكاة',
         id:34,
         audiPath: 'https://gdurl.com/kPqv',
         text: '8',
-        path: require('_assets/images/1/34.jpg'),
+       
       },
-        {name:'الدرس الخامس والثلاثون',
+        {name:'شرح الزكاة',
         id:35,
         audiPath: 'https://gdurl.com/iILe',
         text: '8',
       },
-        {name:'الدرس السادس والثلاثون',
+        {name:'زكاة الأنعام وزكاة الفطر',
         id:36,
         audiPath: 'https://gdurl.com/nptu',
         text: '8',
       },
-        {name:'الدرس السابع والثلاثون',
+
+      { name:'',
+      path: require('_assets/images/1/39.jpeg')}, 
+      
+      {name:'صفة مناسك العمرة بالفيديو مهم جدا!',
+      vid:'https://youtu.be/HV42ibxPbNA',
+       },
+     
+        {name:'صفة العمرة',
         id:37,
         audiPath: 'https://gdurl.com/jOge',
         audiPath2: 'https://gdurl.com/70Hg',
         text: '8',
+        path: require('_assets/images/1/37.jpeg')
       },
-        {name:'الدرس الثامن والثلاثون',
+          
+      {name:'دليل الحج بالفيديو مهم جداً',
+      vid:'https://youtu.be/SNyLksy8DNE',
+       },
+    
+        {name:'صفة الحج',
         id:38,
         audiPath: 'https://gdurl.com/dCDL',
         audiPath2:'https://gdurl.com/xQcS',
         audiPath3:'https://gdurl.com/R5K8',
         text: '8',
+        path: require('_assets/images/1/38.jpeg')
       },
+      {
+        name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+        url:'https://forms.gle/HNnnZzsTYGSKGAHv9'
+      },
+      {name:'',
+      id:39
+
+      },
+      {name:'',
+      id:40
+
+      }
       ],
     };
   }
@@ -244,6 +304,14 @@ class home extends Component {
     // this.props.navigation.navigate('Methal');
     Alert.alert('بتشتغل لوحدك ليه');
   }
+
+  // componentDidMount () {
+  //   loadResource(myResource).then((content) => {
+  //     this.setState({ myResourceContent: content })
+  //   })
+  // }
+
+
 
   FlatListItemSeparator = () => {
     return (
@@ -276,7 +344,11 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>الفقه</Text>
-
+          <SafeAreaView>
+         
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1qxXEvS8iKpA82lohbg6-Fl0vEE6smN8M/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 18, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب الفقه الميسر في ضوء الكتاب والسنة</Text>
+           </TouchableOpacity>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -284,19 +356,24 @@ class home extends Component {
               <View style={styles.flatview}>
             
               <Text style={styles.name}>{item.name}</Text>
-           
-           
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+           {item.vid &&
+            <TouchableOpacity onPress={() =>{ Linking.openURL(item.vid)}}>
+            <Text>لمشاهدة الفيديو اضغط الصورة</Text>  
+            <Image source={require('_assets/images/1/youtube.png')} style={styles.Image}/>
+            </TouchableOpacity>
+            }
+            {item.audiPath &&  <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
-               
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+    
               </View>
             )}
             
             keyExtractor={item => item.id}
           />
+          </SafeAreaView>
         </ImageBackground>
       </View>
     );
@@ -321,7 +398,7 @@ const styles = StyleSheet.create({
   },
   flatview: {
     justifyContent: 'center',
-    padding: 0,
+   
     borderRadius: 2,
     margin: 10,
     marginHorizontal: 10,
@@ -329,6 +406,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     borderRadius: 10,
+    
   },
   name: {
     fontFamily: 'ArbFONTS-Monadi',
@@ -351,9 +429,9 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   Image: {
-    height:300,
+    height:200,
     width:300,
-    marginBottom:15,
+    marginBottom:25,
     borderRadius: 5,
 
   }

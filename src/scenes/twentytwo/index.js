@@ -12,10 +12,10 @@ import {
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -23,14 +23,78 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'كيف أفوز برمضان',
           id: 1,
           audiPath: 'https://gdurl.com/LF_E',
           isOpend: false,
           
           },
- 
+          {
+            name: '1استغلال شهر رمضان',
+            id: 2,
+            audiPath: 'https://gdurl.com/2i-b',
+            isOpend: false,
+            
+            },
+            {
+              name: 'استغلال شهر رمضان2',
+              id: 3,
+              audiPath: 'https://gdurl.com/37Mk',
+              isOpend: false,
+              
+              },
+              {
+                name: 'استغلال شهر رمضان3',
+                id: 4,
+                audiPath: 'https://gdurl.com/MoNq',
+                isOpend: false,
+                
+                },
+                {
+                  name: 'الجرأة على الله في المعاصي1',
+                  id: 5,
+                  audiPath: 'https://gdurl.com/jKqf',
+                  isOpend: false,
+                  
+                  },
 
+                  {
+                    name: 'الجرأة على الله في المعاصي2',
+                    id: 6,
+                    audiPath: 'https://gdurl.com/UbWe',
+                    isOpend: false,
+                    
+                    },
+                    {
+                      name: 'كيف أحقق التقوى في رمضان',
+                      id: 7,
+                      audiPath: 'https://gdurl.com/5NmI',
+                      isOpend: false,
+                      
+                      },
+                      {
+                        name: 'ليلة القدر اغتنميها',
+                        id: 8,
+                        audiPath: 'https://gdurl.com/3Al4',
+                        isOpend: false,
+                        
+                        },
+                        {
+                          name: 'فقه الصيام',
+                          id: 9,
+                          audiPath: 'https://gdurl.com/o_3b',
+                          isOpend: false,
+                          
+                          },         
+                          {
+                            name: 'علاج الفتور في رمضان',
+                            id: 9,
+                            audiPath: 'https://gdurl.com/8DeK',
+                            audiPath2:'https://gdurl.com/oKil',
+                            isOpend: false,
+                            
+                            }, 
+                           
       ],
     };
   }
@@ -70,7 +134,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>كيف أفوز برمضان</Text>
-
+          <ScrollView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -91,6 +155,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

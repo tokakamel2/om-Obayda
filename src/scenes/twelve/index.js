@@ -12,327 +12,305 @@ import {
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       FlatListItems: [
+     
+          {
+            name: 'توحيد الألوهية',
+            id: 4,
+            audiPath: 'https://gdurl.com/0RVX',
+            text: '4',
+            path: require('_assets/images/12/7.jpeg'),
+          },
+          {
+            name: 'توحيد الربوبية',
+            id: 5,
+            audiPath: 'https://gdurl.com/Z3jyF',
+            text: '5',
+          },
+          {
+            name: 'توحيد الأسماء والصفات',
+            id: 6,
+            audiPath: 'https://gdurl.com/fEMw',
+            text: '6',
+          },
+          {
+            name: 'موحدة الصفات',
+            id: 7,
+            audiPath: 'https://gdurl.com/c_Qx',
+            text: '7',
+          },
+          {
+            name: 'طلب العلم1',
+            id: 8,
+            audiPath: 'https://gdurl.com/xS_ix',
+            text: '8',
+          },
+          {name:'طلب العلم2',
+          id:9,
+          audiPath: 'https://gdurl.com/6QUc',
+          text: '8',
+          path: require('_assets/images/12/1.jpeg'),
+          },
+          {name:'كيف تكوني داعية1',
+          id:10,
+          audiPath: 'https://gdurl.com/Roi7',
+          text: '8',
+          },
+          {name:'كيف تكوني داعية2',
+          id:11,
+          audiPath: 'https://gdurl.com/zdvc',
+          text: '8',
+          },
+          {name:'كيف تكوني داعية3',
+          id:12,
+          audiPath: 'https://gdurl.com/0NUE',
+          text: '8',
+          },
+          {name:'كيف تكوني داعية4',
+          id:13,
+          audiPath: 'https://gdurl.com/mmen',
+          text: '8',
+        },
+          {name:'كيف تكوني داعية5',
+          id:14,
+          audiPath: 'https://gdurl.com/bVgX',
+          text: '8',
+          
+        },
+          {name:'حـــــســن الـــخـــــلق',
+          id:15,
+          audiPath: 'https://gdurl.com/OMIe',
+          audiPath2:'https://gdurl.com/fWh4',
+         
+          text: '8',
+          path: require('_assets/images/12/2.jpeg'),
+        },
+          {name:'كيف تكوني امرأة عابدة1',
+          id:16,
+          audiPath:'https://gdurl.com/3HEV',
+          audiPath2: 'https://gdurl.com/pSBf',
+          text: '8',
+        },
         {
-          name: 'الدرس الأول',
+          name: 'كيف يغفر الله لكِ',
           id: 1,
-          audiPath: 'https://gdurl.com/MgtT',
+          audiPath: 'https://gdurl.com/tyEe',
           isOpend: false,
           
           },
         {
-          name: 'الدرس الثاني',
+          name: 'اتركي الإنترنت',
           id: 2,
-          audiPath: 'https://gdurl.com/lGt4',
+          audiPath: 'https://gdurl.com/kv5F',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'أمور تهم الداعية خاصة والمسلمة عامة',
           id: 3,
-          audiPath: 'https://gdurl.com/Cnol',
-          audiPath2:'https://gdurl.com/saj1f',
+          audiPath:'https://gdurl.com/6PQD',
+          audiPath2: 'https://gdurl.com/M7VL',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'رسالة في تربية الأبناء',
           id: 4,
-          audiPath: 'https://gdurl.com/0RVX',
+          audiPath: 'https://gdurl.com/sk_M',
           text: '4',
+          path: require('_assets/images/12/3.jpeg'),
         },
         {
-          name: 'الدرس الخامس',
+          name: 'كيف نتخلص من النفاق',
           id: 5,
-          audiPath: 'https://gdurl.com/Z3jyF',
+          audiPath: 'https://gdurl.com/6eHR',
+          audiPath2:'https://gdurl.com/Q79C',
           text: '5',
         },
         {
-          name: 'الدرس السادس',
+          name: 'الصلاة',
           id: 6,
-          audiPath: 'https://gdurl.com/fEMw',
+          audiPath: 'https://gdurl.com/NQ9B',
+          audiPath2:'https://gdurl.com/3k-0',
           text: '6',
         },
         {
-          name: 'الدرس السابع',
+          name: 'نصيحة',
           id: 7,
-          audiPath: 'https://gdurl.com/c_Qx',
+          audiPath: 'https://gdurl.com/suXL',
           text: '7',
         },
         {
-          name: 'الدرس الثامن',
+          name: 'الغربة',
           id: 8,
-          audiPath: 'https://gdurl.com/xS_ix',
+          audiPath: 'https://gdurl.com/pOMc',
+          audiPath2:'https://gdurl.com/vK34',
           text: '8',
         },
-        {name:'الدرس التاسع',
-        id:9,
-        audiPath: 'https://gdurl.com/6QUc',
-        text: '8',
-        },
-        {name:'الدرس العاشر',
+      
+        {name:'يا بنت الإسلام لا تكوني من المنافقين',
         id:10,
-        audiPath: 'https://gdurl.com/Roi7',
+        audiPath: 'https://gdurl.com/YNcS',
         text: '8',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'كيف أثبت',
         id:11,
-        audiPath: 'https://gdurl.com/zdvc',
+        audiPath: 'https://gdurl.com/HogP',
+        audiPath2: 'https://gdurl.com/yKYn',
         text: '8',
         },
-        {name:'الدرس الثاني عشر',
+        {name:'الولاء',
         id:12,
-        audiPath: 'https://gdurl.com/0NUE',
+        audiPath: 'https://gdurl.com/aBaS',
+        audiPath2:'https://gdurl.com/g7wQ',
         text: '8',
         },
-        {name:'الدرس الثالث عشر',
+        {name:'الابتلاء',
         id:13,
-        audiPath: 'https://gdurl.com/mmen',
+        audiPath: 'https://gdurl.com/YqFD',
+        audiPath2:'https://gdurl.com/18so',
+        audiPath3:'https://gdurl.com/luoh',
         text: '8',
       },
-        {name:'الدرس الرابع عشر',
+        {name:'مشكلات داعية',
         id:14,
-        audiPath: 'https://gdurl.com/bVgX',
+        audiPath: 'https://gdurl.com/TVXI',
+        audiPath2:'https://gdurl.com/OGhe',
         text: '8',
         
       },
-        {name:'الدرس الخامس عشر',
+        {name:'ما اسمك عند الله',
         id:15,
-        audiPath: 'https://gdurl.com/OMIe',
-        audiPath2:'https://gdurl.com/fWh4',
-        audiPath2:'',
+        audiPath: 'https://gdurl.com/pS5P',
         text: '8',
+        path: require('_assets/images/12/5.jpeg'),
       },
-        {name:'الدرس السادس عشر',
+        {name:'طريقة الغسل الصحيحة',
         id:16,
-        audiPath:'https://gdurl.com/3HEV',
-        audiPath2: 'https://gdurl.com/pSBf',
+        audiPath: 'https://gdurl.com/R_pB',
         text: '8',
       },
       {
-        name: 'الدرس السابع عشر',
+        name: 'ماهو النفاق العقدي',
         id: 1,
-        audiPath: 'https://gdurl.com/tyEe',
+        audiPath: 'https://gdurl.com/01cq',
         isOpend: false,
         
         },
       {
-        name: 'الدرس الثامن عشر',
+        name: 'النفاق العملي',
         id: 2,
-        audiPath: 'https://gdurl.com/kv5F',
+        audiPath: 'https://gdurl.com/D_Rv',
+        audiPath2:'https://gdurl.com/FkeH',
       
        
       },
       {
-        name: 'الدرس التاسع عشر',
+        name: 'كلمة عن النقاب',
         id: 3,
-        audiPath: 'https://gdurl.com/M7VL',
+        audiPath: 'https://gdurl.com/M9ns',
        
       },
       {
-        name: 'الدرس العشرون',
+        name: 'كلمة لكل منتقبة1',
         id: 4,
-        audiPath: 'https://gdurl.com/sk_M',
+        audiPath: 'https://gdurl.com/XYP3I',
         text: '4',
       },
       {
-        name: 'الدرس الواحد والعشرون',
+        name: 'كلمة لكل منتقبة2',
         id: 5,
-        audiPath: 'https://gdurl.com/6eHR',
-        audiPath2:'https://gdurl.com/Q79C',
+        audiPath: 'https://gdurl.com/HkX7',
         text: '5',
+        path: require('_assets/images/12/4.jpeg'),
       },
       {
-        name: 'الدرس الثاني والعشرون',
+        name: 'يابنت الإسلام لا تكوني من المنافقين وقد أهلت العشر',
         id: 6,
-        audiPath: 'https://gdurl.com/NQ9B',
-        audiPath2:'https://gdurl.com/3k-0',
+        audiPath: 'https://gdurl.com/X7Ce',
+        audiPath2:'https://gdurl.com/ePzZ',
         text: '6',
       },
       {
-        name: 'الدرس الثالث والعشرون',
+        name: 'اشياء كثيره فى قلبى حتى بعد التزامى  كيف اتخلص منها ؟',
         id: 7,
-        audiPath: 'https://gdurl.com/suXL',
+        audiPath: 'https://gdurl.com/cTKM',
         text: '7',
       },
       {
-        name: 'الدرس الرابع والعشرون',
+        name: 'حب الله1',
         id: 8,
-        audiPath: 'https://gdurl.com/pOMc',
-        audiPath2:'https://gdurl.com/vK34',
+        audiPath: 'https://gdurl.com/VIon',
         text: '8',
       },
-      {name:'الدرس الخامس والعشرون',
+      {name:'حب الله2',
       id:9,
-      audiPath: 'https://gdurl.com/CKUe',
+      audiPath: 'https://gdurl.com/MRHA',
       text: '8',
       },
-      {name:'الدرس السادس والعشرون',
+      {name:'الخوف من الله',
+      id:9,
+      audiPath: 'https://gdurl.com/Dzec',
+      text: '8',
+      },
+      {name:'الرجاء',
       id:10,
-      audiPath: 'https://gdurl.com/YNcS',
+      audiPath: 'https://gdurl.com/bgrU',
       text: '8',
       },
-      {name:'الدرس السابع والعشرون ',
-      id:11,
-      audiPath: 'https://gdurl.com/HogP',
-      audiPath2: 'https://gdurl.com/yKYn',
-      text: '8',
-      },
-      {name:'الدرس الثامن والعشرون',
-      id:12,
-      audiPath: 'https://gdurl.com/aBaS',
-      audiPath2:'https://gdurl.com/g7wQ',
-      text: '8',
-      },
-      {name:'الدرس التاسع والعشرون ',
+ 
+     
+      {name:'ماذا فعل بك الانترنت',
       id:13,
-      audiPath: 'https://gdurl.com/YqFD',
-      audiPath2:'https://gdurl.com/18so',
-      audiPath3:'https://gdurl.com/luoh',
+      audiPath: 'https://gdurl.com/aylz',
       text: '8',
+      path: require('_assets/images/12/6.jpeg'),
     },
-      {name:'الدرس الثلاثون',
+      {name:'سؤال هام',
       id:14,
-      audiPath: 'https://gdurl.com/TVXI',
-      audiPath2:'https://gdurl.com/OGhe',
+      audiPath: 'https://gdurl.com/K-VW',
       text: '8',
       
     },
-      {name:'الدرس الواحد والثلاثون ',
+      {name:'كلمة عن طلب العلم والدعوة',
       id:15,
-      audiPath: 'https://gdurl.com/pS5P',
+      audiPath: 'https://gdurl.com/YGph',
       text: '8',
     },
-      {name:'الدرس الثاني والثلاثون',
-      id:16,
-      audiPath: 'https://gdurl.com/R_pB',
-      text: '8',
-    },
-    {
-      name: 'الدرس الثالث والثلاثون',
-      id: 1,
-      audiPath: 'https://gdurl.com/01cq',
-      isOpend: false,
-      
-      },
-    {
-      name: 'الدرس الرابع والثلاثون',
-      id: 2,
-      audiPath: 'https://gdurl.com/D_Rv',
-      audiPath2:'https://gdurl.com/FkeH',
-    
      
-    },
-    {
-      name: 'الدرس الخامس والثلاثون',
-      id: 3,
-      audiPath: 'https://gdurl.com/M9ns',
-     
-    },
-    {
-      name: 'الدرس السادس والثلاثون',
-      id: 4,
-      audiPath: 'https://gdurl.com/XYP3I',
-      text: '4',
-    },
-    {
-      name: 'الدرس السابع والثلاثون',
-      id: 5,
-      audiPath: 'https://gdurl.com/HkX7',
-      text: '5',
-    },
-    {
-      name: 'الدرس الثامن والثلاثون',
-      id: 6,
-      audiPath: 'https://gdurl.com/X7Ce',
-      audiPath2:'https://gdurl.com/ePzZ',
-      text: '6',
-    },
-    {
-      name: 'الدرس التاسع والثلاثون',
-      id: 7,
-      audiPath: 'https://gdurl.com/cTKM',
-      text: '7',
-    },
-    {
-      name: 'الدرس الأربعون',
-      id: 8,
-      audiPath: 'https://gdurl.com/VIon',
-      text: '8',
-    },
-    {name:'الدرس الواحد وأربعون',
-    id:9,
-    audiPath: 'https://gdurl.com/Dzec',
-    text: '8',
-    },
-    {name:'الدرس الثاني وأربعون',
-    id:10,
-    audiPath: 'https://gdurl.com/bgrU',
-    text: '8',
-    },
-    {name:'الدرس الثالث والأربعون ',
-    id:11,
-    audiPath: 'https://gdurl.com/4_KcF',
-    text: '8',
-    },
-    {name:'الدرس الرابع والأربعون ',
-    id:12,
-    audiPath: 'https://gdurl.com/qSGs',
-    audiPath2:'https://gdurl.com/k5sX',
-    audiPath3:'https://gdurl.com/jIX3M',
-    text: '8',
-    },
-    {name:'الدرس الخامس والأربعون ',
+    {name:'كيف احافظ على صلاه الفجر والقيام',
     id:13,
-    audiPath: 'https://gdurl.com/aylz',
+    audiPath: 'https://gdurl.com/fGcY',
     text: '8',
   },
-    {name:'الدرس السادس والأربعون ',
+    {name:'مسائل مهمة',
     id:14,
-    audiPath: 'https://gdurl.com/K-VW',
+    audiPath: 'https://gdurl.com/f7G1',
     text: '8',
-    
+    path: require('_assets/images/12/7.jpeg'),
   },
-    {name:'الدرس السابع والأربعون ',
-    id:15,
-    audiPath: 'https://gdurl.com/YGph',
-    text: '8',
-  },
-    {name:'الدرس الثامن والأربعون ',
-    id:16,
-    audiPath: 'https://gdurl.com/FE0n',
-    audiPath2:'https://gdurl.com/vvAx',
-    text: '8',
-  },
-  {name:'الدرس التاسع والأربعون ',
-  id:13,
-  audiPath: 'https://gdurl.com/fGcY',
-  text: '8',
-},
-  {name:'الدرس الخمسون  ',
-  id:14,
-  audiPath: 'https://gdurl.com/f7G1',
-  text: '8',
-  
-},
-  {name:'الدرس الواحد والخمسون  ',
-  id:15,
-  audiPath: 'https://gdurl.com/aNn9',
-  text: '8',
-},
-  {name:'الدرس الثاني والخمسون  ',
+   
+  {name:'ما سبب الانتكاس؟',
   id:16,
-  audiPath: 'https://gdurl.com/c1DS',
+  audiPath: 'https://gdurl.com/vyYy',
   text: '8',
 },
+{
+  name: 'علاج الفتور',
+  id: 9,
+  audiPath: 'https://gdurl.com/8DeK',
+  audiPath2:'https://gdurl.com/oKil',
+  isOpend: false,
+  
+  }, 
       ],
     };
   }
@@ -372,20 +350,22 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>يا بنت الإسلام أطيعي الله ورسوله</Text>
-
+          <ScrollView>
+         
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
             renderItem={({item}) => (
               <View style={styles.flatview}>
-            
+               <View>
               <Text style={styles.name}>{item.name}</Text>
-           
-           
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
+              </View> 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
-            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>}
+            {item.audiPath4 && <PlayerScreen filepath={item.audiPath3}/>} 
+            {item.audiPath5 && <PlayerScreen filepath={item.audiPath3}/>} 
+ 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
                
               </View>
@@ -393,6 +373,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
@@ -434,7 +415,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'ArbFONTS-Monadi',
-    fontSize: 45,
+    fontSize: 30,
     color: '#371921',
     paddingBottom: 0,
     textAlign: 'center',
@@ -447,7 +428,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   Image: {
-    height:300,
+    height:200,
     width:300,
     marginBottom:15,
     borderRadius: 5,

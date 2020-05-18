@@ -9,13 +9,14 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
+  Linking,
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -612,7 +613,10 @@ id:14,
 audiPath: 'https://gdurl.com/XqX8',
 text: '8',
 },
-
+{
+  name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+  url:'https://forms.gle/oW4UqKB4TJj8kY4r7'
+}
       ],
     };
   }
@@ -652,7 +656,7 @@ text: '8',
             opacity: 100,
           }}>
           <Text style={styles.title}>صحيح البخاري</Text>
-
+          <ScrollView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -663,16 +667,18 @@ text: '8',
            
            
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+             {item.audiPath &&  <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
-               
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+   
               </View>
             )}
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

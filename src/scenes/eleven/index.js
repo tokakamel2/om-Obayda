@@ -5,17 +5,17 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
+
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  SafeAreaView,
+ 
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -188,7 +188,10 @@ text: '8',
             opacity: 100,
           }}>
           <Text style={styles.title}>سير الصحابة</Text>
-
+          <ScrollView>
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1Rf-5BVRVd5DcqjZVnCvpB_o34p83VlQd/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب أصحاب الرسول</Text>
+           </TouchableOpacity>  
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -211,6 +214,7 @@ text: '8',
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

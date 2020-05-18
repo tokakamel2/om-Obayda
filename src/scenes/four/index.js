@@ -4,22 +4,21 @@ import {
   View,
   Text,
   FlatList,
-  Image,
-  Alert,
-  Button,
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  SafeAreaView
+  Linking
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(prpos) {
     super(prpos);
     this.state = {
       FlatListItems: [
+        {name:'تفسير سورة الفاتحة',id:'alf'},
         {name:'تفسير سورة البقرة', id:'tafs1'}, //done
         {name:'سورة آل عمران', id:'tafs2'}, //done
         {name:'سورة النساء',id:'tafs3'}, //done
@@ -28,7 +27,10 @@ class home extends Component {
         {name:'جزء قد سمع', id:'tafs6'}, //done
         {name:'جزء تبارك', id:'tafs7'}, //done
         {name:'جزء عم',id:'tafs8'}, //done
-     
+        {
+          name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+          url:'https://forms.gle/5nk5NPceDq6J8sr19'
+        }
         
 
       ],
@@ -59,26 +61,32 @@ class home extends Component {
           height: '100%',
           opacity: 100,
         }}>
-      
+      <ScrollView>
+      <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1tpV3Le54_uIdx5FH6e-JyoEOrVBAAsok/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب تفسير كلام المنان</Text>
+           </TouchableOpacity>
       <FlatList
           
           data={this.state.FlatListItems}
           showsVerticalScrollIndicator={false}
         
           renderItem={({item}) =>
-          <TouchableOpacity   onPress={() => this.props.navigation.navigate(item.id)}  >
+          <TouchableOpacity   onPress={() =>{if(!item.url){ this.props.navigation.navigate(item.id)}else{Linking.openURL(item.url)}}}  >
           <View style={styles.flatview}>
             <Text style={styles.name}>{item.name}</Text>
-            
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+
           </View>
           </TouchableOpacity>
+          
         }
          
           keyExtractor={item => item.id}
        
         
        />
-       
+
+       </ScrollView>
       </ImageBackground>
       </View>
     );

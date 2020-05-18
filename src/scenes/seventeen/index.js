@@ -10,12 +10,13 @@ import {
   ImageBackground,
   StyleSheet,
   SafeAreaView,
+  Linking
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class home extends Component {
           id: 1,
           audiPath: 'https://gdurl.com/BI_c',
           isOpend: false,
-          
+          path: require('_assets/images/17/1.jpeg'),
           },
         {
           name: 'الدرس الثاني',
@@ -165,6 +166,7 @@ id:23,
 audiPath: 'https://gdurl.com/jcq5',
 audiPath2: 'https://gdurl.com/lyYG',
 text: '8',
+path: require('_assets/images/17/2.jpeg'),
 },
 {name:'الــفــتــاح',
 id:24,
@@ -266,6 +268,7 @@ text: '8',
 id:43,
 audiPath: 'https://gdurl.com/bl5AJ',
 text: '8',
+path: require('_assets/images/17/3.jpeg'),
 },
 {name:'المؤمن المهيمن المحيط',
 id:44,
@@ -339,14 +342,28 @@ id:57,
 audiPath: 'https://gdurl.com/fayn',
 audiPath2:'https://gdurl.com/HX63V',
 text: '8',
+path: require('_assets/images/17/2.jpeg'),
 },
 {name:'العفو القهار',
 id:58,
 audiPath: 'https://gdurl.com/9uri',
 text: '8',
 },
+{name:'عرفت ربى وعرفت ضعفى ومن انا',
+id:58,
+audiPath: 'https://gdurl.com/K0Py',
+text: '8',
+},
+{name:'الرَّحْمَٰنُ فَاسْأَلْ بِهِ خَبِيرًا',
+id:58,
+audiPath: 'https://gdurl.com/9qX1',
+text: '8',
+},
 
-
+{
+  name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+  url:'https://forms.gle/TUBL7etNyQFsRwca6'
+}
 
       ],
     };
@@ -387,7 +404,10 @@ text: '8',
             opacity: 100,
           }}>
           <Text style={styles.title}>أسماء الله الحسنى</Text>
-
+          <ScrollView>
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1rMsW0xactOaVcn8_6CocNToeXc_OxiXB/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب فقه الأسماء الحسنى</Text>
+           </TouchableOpacity>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -398,16 +418,18 @@ text: '8',
            
            
             {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+         {item.audiPath &&     <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
-               
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+    
               </View>
             )}
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
@@ -440,6 +462,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     borderRadius: 10,
+    flexGrow:1
   },
   name: {
     fontFamily: 'ArbFONTS-Monadi',
@@ -462,7 +485,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   Image: {
-    height:300,
+    height:200,
     width:300,
     marginBottom:15,
     borderRadius: 5,

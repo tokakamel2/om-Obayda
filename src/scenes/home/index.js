@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -25,29 +26,36 @@ class home extends Component {
     this.state = {
       wait: true,
       FlatListItems: [
-        {name:'الفقه', id:'one'}, //done voice
-        {name:'العقيدة', id:'two'}, //done voice
-        {name:'الثلاثون النسائية',id:'three'},//DONE ALL
-        {name:'التفسير',id:'four'}, //DONE ALL
         {name:'تصحيح التلاوة', id:'five'},  //DONE
+        {name:'التفسير',id:'four'}, //DONE ALL
+        {name:'العقيدة', id:'two'}, //done voice
+        {name:'أسماء الله الحسنى', id:'seventeen'},//DONE
+        {name:'صحيح البخاري', id:'sixteen'},  //done voice
+        {name:'الفقه', id:'one'}, //done voice
+        {name:'الثلاثون النسائية',id:'three'},//DONE ALL
+        {name:'سير الصحابة',id:'eleven'},  //DONE
+        {name:'سير الصحابيات',id:'ten'}, //DONE 
         {name:'سلسلة المرأة الصالحة', id:'six'}, //done voice and img
         {name:'سلسلة أخلاق عباد الرحمن', id:'seven'}, // done voice
         {name:'أمراض القلوب',id:'eight'},  //done voice
         {name:'أعمال القلوب',id:'nine'}, //done voice
-        {name:'سير الصحابيات',id:'ten'}, //DONE 
-        {name:'سير الصحابة',id:'eleven'},  //DONE
+      
         {name:'يا بنت الإسلام أطيعي الله ورسوله',id:'twelve'}, //done voice
         {name:'دروس الداعيات', id:'thirteen'},
-        {name:'الأربعون النووية', id:'fourteen'}, //DONE 
         {name:'تدريب داعية', id:'fifteen'},   //DONE
-        {name:'صحيح البخاري', id:'sixteen'},  //done voice
-        {name:'أسماء الله الحسنى', id:'seventeen'},//DONE
+
+        {name:'الأربعون النووية', id:'fourteen'}, //DONE 
         {name:'سأبدأ من جديد بقلب محب ودود', id:'nineteen'},//DONE
         {name:'سلسلة أصول الوصول', id:'twenty'}, //done voice
         {name:'سلسلة الحقوق الإسلامية', id:'twentyone'},//DONE
         {name:'كيف أفوز برمضان', id:'twentytwo'}, //DONE
+        {name:'العشر من ذي الحجة',id:'twentyfour'},
         {name:'فتاوى المرأة المسلمة', id:'eighteen'}, //done voice
-        
+        {name:'كيف تتذوقي طعم السعادة',id:'twentythree'},
+        {name:'حلول المشاكل الزوجية', id:'twentyfive'},
+       
+        {name:'روابط التواصل والتليجرام', id:'about'}, //done voice
+
 
       ],
     };
@@ -62,7 +70,7 @@ check =async()=>{
   const value =await AsyncStorage.setItem('firstTime', 'false')  
   console.log(value)
 }
-    if (firstTime == 'True' ){
+    if (firstTime !== 'false' ){
     console.log(firstTime)
     Alert.alert(
       "تنبيه هام",
@@ -116,7 +124,7 @@ check =async()=>{
           height: '100%',
           opacity: 100,
         }}>
-      
+     <ScrollView>
       <FlatList
           
           data={this.state.FlatListItems}
@@ -135,7 +143,7 @@ check =async()=>{
        
         
        />
-       
+       </ScrollView> 
       </ImageBackground>
   }
 {this.state.wait && 

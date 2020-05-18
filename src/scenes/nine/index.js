@@ -10,12 +10,10 @@ import {
   ImageBackground,
   StyleSheet,
   SafeAreaView,
-  
+  Linking
 } from 'react-native';
-import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
 
 class home extends Component {
   constructor(props) {
@@ -28,13 +26,14 @@ class home extends Component {
           audiPath: 'https://gdurl.com/eaW0',
           audiPath2: 'https://gdurl.com/SQjb',
           isOpend: false,
+          path: require('_assets/images/9/1.jpeg'),
           
           },
         {
           name: 'الدرس الثاني',
           id: 2,
           audiPath: 'https://gdurl.com/blvG',
-        
+          path: require('_assets/images/9/2.jpeg'),
          
         },
         {
@@ -42,54 +41,72 @@ class home extends Component {
           id: 3,
           audiPath: 'https://gdurl.com/IsSz',
           audiPath2: 'https://gdurl.com/2baB',
-         
+          path: require('_assets/images/9/3.jpeg'),
         },
         {
           name: 'الدرس الرابع',
-          id: 4,
-          audiPath: 'https://gdurl.com/1BwB',
-          text: '4',
+          id: 3,
+          audiPath: 'https://gdurl.com/2baB',
+          path: require('_assets/images/9/4.jpeg'),
         },
         {
           name: 'الدرس الخامس',
-          id: 5,
-          audiPath: 'https://gdurl.com/uT0F',
-          text: '5',
+          id: 4,
+          audiPath: 'https://gdurl.com/1BwB',
+          text: '4',
+          path: require('_assets/images/9/5.jpeg'),
         },
         {
           name: 'الدرس السادس',
-          id: 6,
-          audiPath: 'https://gdurl.com/hatX',
-          text: '6',
+          id: 5,
+          audiPath: 'https://gdurl.com/uT0F',
+          text: '5',
+          path: require('_assets/images/9/6.jpeg'),
         },
         {
           name: 'الدرس السابع',
-          id: 7,
-          audiPath: 'https://gdurl.com/UrlP',
-          text: '7',
+          id: 6,
+          audiPath: 'https://gdurl.com/hatX',
+          text: '6',
+          path: require('_assets/images/9/7.jpeg'),
         },
         {
           name: 'الدرس الثامن',
+          id: 7,
+          audiPath: 'https://gdurl.com/UrlP',
+          text: '7',
+          path: require('_assets/images/9/8.jpeg'),
+        },
+        {
+          name: 'الدرس التاسع',
           id: 8,
           audiPath: 'https://gdurl.com/R61Q',
           text: '8',
+          path: require('_assets/images/9/9.jpeg'),
         },
-        {name:'الدرس التاسع',
+        {name:'الدرس العاشر',
         id:9,
         audiPath: 'https://gdurl.com/xGgw',
         text: '8',
+        path: require('_assets/images/9/10.jpeg'),
         },
-        {name:'الدرس العاشر',
+        {name:'الدرس الحادي عشر',
         id:10,
         audiPath: 'https://gdurl.com/pFkg',
         text: '8',
+        path: require('_assets/images/9/11.jpeg'),
         },
-        {name:'الدرس الحادي عشر',
+        {name:'الدرس الثاني عشر ',
         id:11,
         audiPath: 'https://gdurl.com/TqA28',
         text: '8',
+        path: require('_assets/images/9/12.jpeg'),
         },
- 
+        {
+          name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+          url:'https://forms.gle/dXsqKU1bEL6L5cu16'
+        }
+      
 
       ],
     };
@@ -130,7 +147,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>أعمال القلوب</Text>
-
+          <SafeAreaView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -140,17 +157,18 @@ class home extends Component {
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+            {item.audiPath &&  <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
-               
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+  
               </View>
             )}
             
             keyExtractor={item => item.id}
           />
+          </SafeAreaView>
         </ImageBackground>
       </View>
     );
@@ -183,6 +201,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     borderRadius: 10,
+    paddingBottom:50,
   },
   name: {
     fontFamily: 'ArbFONTS-Monadi',

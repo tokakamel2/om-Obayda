@@ -5,17 +5,17 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
+  Linking,
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  SafeAreaView,
+  
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -23,264 +23,269 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: 'عقيدة الفرقة الناجية',
           id: 1,
           audiPath: 'https://gdurl.com/5kkN',
-          path: require('_assets/images/1/1.jpg'),
           isOpend: false,
-          text:
-            'واليوم مع الدرس الاول من الفقة 📃👆🏻نتكلم  فية عن ادب الخلاف !?ولماذا يختلف العلماء ? وماذا نفعل لو راينا حكم فية اكثر من راى  !!وإلــيـــكِ أسـئلــة الـدرس📃👇🏻1-🔅 لماذا يوجد بعض الاختلافات بين اهل العلم؟  2-🔅 ماهو ادب الخلاف ؟3- 🔅ماهى اقسام الاختلاف المعتبر وغير المعتبر  مع بعض الامثله ؟4🔅- مالذى استفدتيه من هذا الدرس ؟حلى الاسئلة مع نفسك ليثبت العلم لديكى👍🏻 وتختبرى نفسك اسمعي  وانشرى 👆🏻👍  🌹🎀🌹 #الدرس_الاول_فقه',
+          path: require('_assets/images/2/0.jpeg')
           },
         {
-          name: 'الدرس الثاني',
+          name: 'من هم السلف',
           id: 2,
           audiPath: 'https://gdurl.com/PGNU',
-          text: 'وهذا هو الدرس الثانى⏫ من دروس الفقه ? وهو ثمره علم الفقه ! وماهو الفقة ? وكيف اصل للفهم فى دينى وامور عده مهم تهمك 👍🏻 اسمعى وانشرى لكل النساء🌸🌸🌸 #الدرس_الثاني_فقه',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'ماهى العباده؟',
           id: 3,
           audiPath: 'https://gdurl.com/ZBo9',
-          text: 'اسئلة ✒️ لدرس الثالث من الفقة لباب فقة طهارة المياة💦💦 مسائل ✒ 1-*- امرأه اخذت الماء الذى شربت منه الهره وتوضأت منه ماالحكم؟2-*- امرأه بال عليها طفل ماالحكم مع الدليل؟ 3-*- هل سؤر الكافر نجس ؟  صــ☑️ـــح ام خــطـ✖️ـــأ1-وقع صابون فى الماء فغيرت شكلة يصح للوضؤ لأن الصابون طاهر (      ) 2- استعملت ماء فأخذت بعدى هذا الماء الفاضل بقية استعمالى وتوضئتى به لانه يجوز الماء المستعمل (     ) 3- حصان شربت من الماء فذهبت وغيرت الماء وقلت انه لايجوز  استعماله    (     )          4- غيرت كل ملابسها وتوضأت لأن طفل عمرة شهر بال عليها هل فعلها صحيح (   )اختبرى نفسك بعد سماع الدرس😊 #الدرس_الثالث_فقه',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: 'ماهو الدين الوحيد الذى انزل الله من السماء على جميع الانبياء',
           id: 4,
           audiPath: 'https://gdurl.com/gvD4',
           text: '4',
         },
         {
-          name: 'الدرس الخامس',
+          name: 'شروط لا اله الا الله',
           id: 5,
           audiPath: 'https://gdurl.com/HTJr',
           text: '5',
+          path: require('_assets/images/2/2.jpeg')
         },
         {
-          name: 'الدرس السادس',
+          name: 'توحيد الربوبيه',
           id: 6,
           audiPath: 'https://gdurl.com/MZ37',
           text: '6',
-          path: require('_assets/images/1/6.jpg'),
         },
         {
-          name: 'الدرس السابع',
+          name: 'تكملة توحيد الربوبيه ',
           id: 7,
           audiPath: 'https://gdurl.com/80Y7',
           text: '7',
         },
         {
-          name: 'الدرس الثامن',
+          name: 'توحيد الألوهيه ',
           id: 8,
           audiPath: 'https://gdurl.com/A75u',
           text: '8',
         },
-        {name:'الدرس التاسع',
+        {name:'بعض الأحكام',
         id:9,
         audiPath: 'https://gdurl.com/tROtu',
         text: '8',
+        path: require('_assets/images/2/8.jpg')
         },
-        {name:'الدرس العاشر',
+        {name:'الرقية والتمائم وغيرها ',
         id:10,
         audiPath: 'https://gdurl.com/49AP',
         text: '8',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'الرقية والتمائم وغيرها2',
         id:11,
         audiPath: 'https://gdurl.com/lAEiF',
         text: '8',
         },
-        {name:'الدرس الثاني عشر',
+        {name:'زياره القبور',
         id:12,
         audiPath: 'https://gdurl.com/IjvG',
         text: '8',
         },
-        {name:'الدرس الثالث عشر',
+        {name:'باب التوسل والغلو ',
         id:13,
         audiPath: 'https://gdurl.com/a6uD',
         text: '8',
-        path: require('_assets/images/1/13.jpg'),
       },
-        {name:'الدرس الرابع عشر',
+        {name:'باب الشرك وانواعه ',
         id:14,
         audiPath: 'https://gdurl.com/1ikG',
         text: '8',
-        
+        path: require('_assets/images/2/1.jpeg')
       },
-        {name:'الدرس الخامس عشر',
+        {name:' باب الكفر',
         id:15,
         audiPath: 'https://gdurl.com/yGX1',
         text: '8',
       },
-        {name:'الدرس السادس عشر',
+        {name:'باب حرمه ادعاء الغيب والسحر والتنجيم',
         id:16,
         audiPath: 'https://gdurl.com/q-nT',
         text: '8',
       },
-      { name:'الدرس السابع عشر',
+      { name:' باب شرح  توحيد اسماء الله الحسنى',
         id:17,
         audiPath: 'https://gdurl.com/tlSB',
         text: '8',
       },
-        {name:'الدرس الثامن عشر',
+        {name:'تكملة باب شرح  قواعد الأسماء والصفات',
         id:18,
         audiPath: 'https://gdurl.com/Qqyi',
         text: '8',
       },
-        {name:'الدرس التاسع عشر',
+        {name:'الايمان بالملائكه',
         id:19,
         audiPath: 'https://gdurl.com/tL_P',
         text: '8',
-
+        path: require('_assets/images/2/3.jpeg')
       },
-        {name:'الدرس العشرون',
+        {name:'تكملة الايمان بالملائكه',
         id:20,
         audiPath: 'https://gdurl.com/U82E',
         text: '8',
       },
-        {name:'الدرس الواحد والعشرون',
+        {name:'نختم الايمان بالملائكه',
         id:21,
         audiPath: 'https://gdurl.com/e9SB',
         text: '8',
       },
-        {name:'الدرس الثاني والعشرون',
+        {name:'باب الايمان بالكتب',
         id:22,
         audiPath: 'https://gdurl.com/z0lZ',
         text: '8',
+        path: require('_assets/images/2/4.jpeg')
       },
-        {name:'الدرس الثالث والعشرون',
+        {name:'باب الايمان بالكتب 2',
         id:23,
         audiPath: 'https://gdurl.com/9yHN',
         text: '8',
       },
-        {name:'الدرس الرابع والعشرون',
+        {name:'نختمباب الايمان بالكتب',
         id:24,
         audiPath: 'https://gdurl.com/mcGD',
         text: '8',
       },
-        {name:'الدرس الخامس والعشرون',
+        {name:'الإيمان بالرسل',
         id:25,
         audiPath: 'https://gdurl.com/7kG5',
         text: '8',
       },
-        {name:'الدرس السادس والعشرون',
+        {name:'تكملة الإيمان بالرسل',
         id:26,
         audiPath: 'https://gdurl.com/eiKu',
         text: '8',
+        path: require('_assets/images/2/5.jpeg')
       },
-        {name:'الدرس السابع والعشرون',
+        {name:'حقوق النبي',
         id:27,
         audiPath: 'https://gdurl.com/8pwg',
         text: '8',
       },
-        {name:'الدرس الثامن والعشرون',
+        {name:'تكملة حقوق النبي',
         id:28,
         audiPath: 'https://gdurl.com/aDQS',
         text: '8',
       },
-        {name:'الدرس التاسع والعشرون',
+        {name:'باب الإسراء والمعراج',
         id:29,
         audiPath: 'https://gdurl.com/vllf',
         text: '8',
-        path: require('_assets/images/1/29.jpg'),
       },
-        {name:'الدرس الثلاثون',
+        {name:'الفرق بين المعجزة والكرامه ',
         id:30,
         audiPath: 'https://gdurl.com/Ggp8',
         text: '8',
       },
-        {name:'الدرس الواحد والثلاثون',
+        {name:'باب الإيمان باليوم الآخر',
         id:31,
         audiPath: 'https://gdurl.com/WZ0k',
         text: '8',
+        path: require('_assets/images/2/6.jpeg')
       },
-        {name:'الدرس الثاني والثلاثون',
+        {name:'حسن الخاتمة وسوء الخاتمة',
         id:32,
         audiPath: 'https://gdurl.com/knHn',
         text: '8',
       },
-        {name:'الدرس الثالث والثلاثون',
+        {name:'أدلة عذاب القبر ونعيم القبر',
         id:33,
         audiPath: 'https://gdurl.com/uYyO',
         text: '8',
       },
-        {name:'الدرس الرابع والثلاثون',
+        {name:'تكملة أدلة عذاب القبر',
         id:34,
         audiPath: 'https://gdurl.com/m6TV',
         text: '8',
-        path: require('_assets/images/1/34.jpg'),
       },
-        {name:'الدرس الخامس والثلاثون',
+        {name:'أشراط الساعة الصغرى',
         id:35,
         audiPath: 'https://gdurl.com/3d6j',
         text: '8',
       },
-        {name:'الدرس السادس والثلاثون',
+        {name:'باقي أشراط الساعة الصغرى وجزء من الكبرى',
         id:36,
         audiPath: 'https://gdurl.com/542R',
         text: '8',
       },
-        {name:'الدرس السابع والثلاثون',
+        {name:'الاحلاس والسراء والـدُّهيماء',
         id:37,
         audiPath: 'https://gdurl.com/HsNF',
         text: '8',
       },
-        {name:'الدرس الثامن والثلاثون',
+        {name:'أشراط الساعة الكبرى',
         id:38,
         audiPath: 'https://gdurl.com/FbvH',
         audiPath2:'https://gdurl.com/uUNc',
         text: '8',
       },
-      {name:'الدرس التاسع والثلاثون',
+      {name:'وصف يوم القيامة',
       id:31,
       audiPath: 'https://gdurl.com/2RPF',
       text: '8',
     },
-      {name:'الدرس الأربعون',
+      {name:'مشاهد يوم القيامة',
       id:32,
       audiPath: 'https://gdurl.com/58iI',
       text: '8',
     },
-      {name:'الدرس الواحد الأربعون',
+      {name:'مشاهد أهل الإيمان',
       id:33,
       audiPath: 'https://gdurl.com/bHXc',
       text: '8',
+      path: require('_assets/images/2/9.jpg')
+
     },
-      {name:'الدرس الثاني و الأربعون',
+      {name:'مشاهد يوم الحساب',
       id:34,
       audiPath: 'https://gdurl.com/d8tV',
       text: '8',
-      path: require('_assets/images/1/34.jpg'),
     },
-      {name:'الدرس الثالث الأربعون',
+      {name:'وصف النار',
       id:35,
       audiPath: 'https://gdurl.com/hl56',
       text: '8',
     },
-      {name:'الدرس الرابع الأربعون',
+      {name:'وصف الجنة ونعيمها',
       id:36,
       audiPath: 'https://gdurl.com/S1us',
       audiPath2: 'https://gdurl.com/zBQD',
       text: '8',
     },
-      {name:'الدرس الخامس الأربعون',
+      {name:'القضاء والقدر',
       id:37,
       audiPath: 'https://gdurl.com/02gp',
       text: '8',
+      path: require('_assets/images/2/7.jpeg')
     },
-      {name:'الدرس السادس والأربعون',
+      {name:'القضاء والقدر',
       id:38,
       audiPath: 'https://gdurl.com/Nl6A',
       text: '8',
     },
-    {name:'الدرس السابع والأربعون',
+    {name:'أحكام متفرقة',
     id:38,
     audiPath: 'https://gdurl.com/kurp',
     text: '8',
+    path: require('_assets/images/2/8.jpg')
   },
-      ],
+  {
+    name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+    url:'https://forms.gle/tzqyJzbhjsvkbc576'
+  }
+
+],
     };
   }
   onSelect(item) {
@@ -319,7 +324,10 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>العقيدة</Text>
-
+          <ScrollView>
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1O6uDp6GQpgyC6LweiEItqi3ft-C_NDHs/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب أصول الإيمان</Text>
+           </TouchableOpacity>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -328,9 +336,9 @@ class home extends Component {
             
               <Text style={styles.name}>{item.name}</Text>
            
-           
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+              {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+
+            {item.audiPath &&  <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
@@ -340,6 +348,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
@@ -394,7 +403,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   Image: {
-    height:300,
+    height:150,
     width:300,
     marginBottom:15,
     borderRadius: 5,

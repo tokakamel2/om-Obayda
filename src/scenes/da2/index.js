@@ -5,17 +5,16 @@ import {
   FlatList,
   Image,
   Alert,
-  Button,
-  TouchableOpacity,
+  
   ImageBackground,
   StyleSheet,
-  SafeAreaView,
+
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -23,183 +22,195 @@ class home extends Component {
     this.state = {
       FlatListItems: [
         {
-          name: 'الدرس الأول',
+          name: '',
+          id: 2,
+         path:require('_assets/images/da2/1.jpg'),
+        },
+        {
+          name: 'اداب الطالب مع شيخه* 1',
           id: 1,
           audiPath: 'https://gdurl.com/Wehj',
           isOpend: false,
           },
         {
-          name: 'الدرس الثاني',
+          name: 'اداب الطالب مع شيخه* 2',
           id: 2,
           audiPath: 'https://gdurl.com/l5mri',
         
          
         },
         {
-          name: 'الدرس الثالث',
+          name: 'اداب الطالب مع شيخه* 3',
           id: 3,
           audiPath: 'https://gdurl.com/I0ho',
          
         },
         {
-          name: 'الدرس الرابع',
+          name: ' اداب الزمالة',
           id: 4,
           audiPath: 'https://gdurl.com/ghAn',
           text: '4',
         },
         {
-          name: 'الدرس الخامس',
+          name: 'الحذر من الأخذ من مبتدع',
           id: 5,
           audiPath: 'https://gdurl.com/SRYQ',
           text: '5',
         },
         {
-          name: 'الدرس السادس',
+          name: 'اداب طالب العلم في حياته',
           id: 6,
           audiPath: 'https://gdurl.com/C8G4',
           text: '6',
         },
         {
-          name: 'الدرس السابع',
+          name: 'اداب طالب العلم في حياته* 2',
           id: 7,
           audiPath: 'https://gdurl.com/xX3I',
           text: '7',
         },
         {
-          name: 'الدرس الثامن',
+          name: 'حفظ العلم بالكتابة*',
           id: 8,
           audiPath: 'https://gdurl.com/s8e7',
           text: '8',
         },
-        {name:'الدرس التاسع',
+        {name:'الجؤ إلى الله وورد العبادات',
         id:9,
         audiPath: 'https://gdurl.com/CvF0',
         text: '8',
         },
-        {name:'الدرس العاشر',
+        {name:'التفقه في الدين',
         id:10,
         audiPath: 'https://gdurl.com/eYu3',
         text: '8',
         },
-        {name:'الدرس الحادي عشر',
+        {name:'الحليه والصدق والأمانه',
         id:11,
         audiPath: 'https://gdurl.com/WqFh',
         text: '8',
         },
-        {name:'الدرس الثاني عشر',
+        {name:'جُنة طالب العلم',
         id:12,
         audiPath: 'https://gdurl.com/mGUKw',
         text: '8',
         },
-        {name:'الدرس الثالث عشر',
+        {name:'كيف يكون عندك حسن سؤال',
         id:13,
         audiPath: 'https://gdurl.com/KlMJ',
         text: '8',
       },
-        {name:'الدرس الرابع عشر',
+        {name:' التحلي بالعمل',
         id:14,
         audiPath: 'https://gdurl.com/34DA',
         text: '8',
         
       },
-        {name:'الدرس الخامس عشر',
+        {name:' زكاة العلم',
         id:15,
         audiPath: 'https://gdurl.com/b1rJ',
         text: '8',
       },
-        {name:'الدرس السادس عشر',
+        {name:'المداراة والمداهنة',
         id:16,
         audiPath: 'https://gdurl.com/DLHA',
         text: '8',
       },
-      { name:'الدرس السابع عشر',
+      { name:'المحاذير1',
         id:17,
         audiPath: 'https://gdurl.com/5EO6',
         text: '8',
       },
-        {name:'الدرس الثامن عشر',
+        {name:'المحاذير2',
         id:18,
         audiPath: 'https://gdurl.com/duCR',
         text: '8',
       },
-        {name:'الدرس التاسع عشر',
+        {name:'المحاذير3',
         id:19,
         audiPath: 'https://gdurl.com/K09Z',
         text: '8',
 
       },
-        {name:'الدرس العشرون',
+        {name:'اداب الطالب مع نفسه 1',
         id:20,
         audiPath: 'https://gdurl.com/Sf6cD',
         text: '8',
       },
-        {name:'الدرس الواحد والعشرون',
+        {name:'اداب الطالب مع نفسه 2',
         id:21,
         audiPath: 'https://gdurl.com/W026',
         text: '8',
       },
-        {name:'الدرس الثاني والعشرون',
+        {name:'اداب الطالب مع نفسه 3',
         id:22,
         audiPath: 'https://gdurl.com/GsrH',
         text: '8',
       },
-        {name:'الدرس الثالث والعشرون',
+        {name:'عقبات الطريق وعلاجها',
         id:23,
         audiPath: 'https://gdurl.com/BBZe',
-        audiPath2:'https://gdurl.com/WotE',
+       
         text: '8',
       },
-        {name:'الدرس الرابع والعشرون',
+      {name:' كيف تكوني امرأة صالحة',
+      id:24,
+      audiPath: 'https://gdurl.com/WotE',
+      text: '8',
+    },
+        {name:'المعاني القلبيّة',
         id:24,
         audiPath: 'https://gdurl.com/4EcL',
         text: '8',
       },
-        {name:'الدرس الخامس والعشرون',
+        {name:' التربية بالطهارة',
         id:25,
         audiPath: 'https://gdurl.com/gRj4',
         text: '8',
       },
-        {name:'الدرس السادس والعشرون',
+        {name:'التربية بالأخلاق1',
         id:26,
         audiPath: 'https://gdurl.com/icE8',
         text: '8',
       },
-        {name:'الدرس السابع والعشرون',
+        {name:'التربية بالأخلاق2',
         id:27,
         audiPath: 'https://gdurl.com/apDB',
         text: '8',
       },
-        {name:'الدرس الثامن والعشرون',
+        {name:'التربية بالأخلاق3',
         id:28,
         audiPath: 'https://gdurl.com/OoxZ',
         text: '8',
       },
-        {name:'الدرس التاسع والعشرون',
+        {name:'خفض الجناح',
         id:29,
         audiPath: 'https://gdurl.com/J1Nq',
         text: '8',
       },
-        {name:'الدرس الثلاثون',
+        {name:'القناعة والزهد',
         id:30,
         audiPath: 'https://gdurl.com/dM5Z',
         text: '8',
       },
-        {name:'الدرس الواحد والثلاثون',
+        
+          {name:'التحلي بالمروئه1',
+
         id:31,
         audiPath: 'https://gdurl.com/Aqxn',
         text: '8',
       },
-        {name:'الدرس الثاني والثلاثون',
+      {name:'التحلي بالمروئه2',
         id:32,
         audiPath: 'https://gdurl.com/CuRR',
         text: '8',
       },
-        {name:'الدرس الثالث والثلاثون',
+        {name:'الرفق والبعد عن اللغو',
         id:33,
         audiPath: 'https://gdurl.com/Kcss',
         text: '8',
       },
-        {name:'الدرس الرابع والثلاثون',
+        {name:'كيف اتدبر بالقران والتأمل والثبات',
         id:34,
         audiPath: 'https://gdurl.com/LyzZ',
         audiPath2:'https://gdurl.com/K17u',
@@ -247,7 +258,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>حلية طالب العلم</Text>
-
+          <ScrollView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -257,8 +268,8 @@ class home extends Component {
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
-              <PlayerScreen filepath={item.audiPath}/>
+         
+            {item.audiPath &&  <PlayerScreen filepath={item.audiPath}/>}
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
             {item.path && <Image source={item.path} style={styles.Image}/> } 
@@ -268,6 +279,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

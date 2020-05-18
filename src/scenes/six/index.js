@@ -12,10 +12,9 @@ import {
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
 
 class home extends Component {
   constructor(props) {
@@ -26,13 +25,14 @@ class home extends Component {
           name: 'الدرس الأول',
           id: 1,
           audiPath: 'https://gdurl.com/PM0h',
-          path: require('_assets/images/1/1.jpg'),
           isOpend: false,
+          path: require('_assets/images/6/1.jpeg'),
           },
         {
           name: 'الدرس الثاني',
           id: 2,
           audiPath: 'https://gdurl.com/cZJW',
+          path: require('_assets/images/6/2.jpeg'),
         
          
         },
@@ -40,65 +40,74 @@ class home extends Component {
           name: 'الدرس الثالث',
           id: 3,
           audiPath: 'https://gdurl.com/R5zW',
+          path: require('_assets/images/6/3.jpeg'),
          
         },
         {
           name: 'الدرس الرابع',
           id: 4,
           audiPath: 'https://gdurl.com/MXgh',
+          path: require('_assets/images/6/4.jpeg'),
           text: '4',
         },
         {
           name: 'الدرس الخامس',
           id: 5,
           audiPath: 'https://gdurl.com/tL-IR',
+          path: require('_assets/images/6/5.jpeg'),
           text: '5',
         },
         {
           name: 'الدرس السادس',
           id: 6,
           audiPath: 'https://gdurl.com/JG3j',
+          path: require('_assets/images/6/6.jpeg'),
           text: '6',
-          path: require('_assets/images/1/6.jpg'),
         },
         {
           name: 'الدرس السابع',
           id: 7,
           audiPath: 'https://gdurl.com/gMVJ',
+          path: require('_assets/images/6/7.jpeg'),
           text: '7',
         },
         {
           name: 'الدرس الثامن',
           id: 8,
           audiPath: 'https://gdurl.com/LoGZ',
+          path: require('_assets/images/6/8.jpeg'),
           text: '8',
         },
         {name:'الدرس التاسع',
         id:9,
         audiPath: 'https://gdurl.com/Kf7i',
+        path: require('_assets/images/6/9.jpeg'),
         text: '8',
         },
         {name:'الدرس العاشر',
         id:10,
         audiPath: 'https://gdurl.com/AkQ7',
+      
         text: '8',
         },
         {name:'الدرس الحادي عشر',
         id:11,
         audiPath: 'https://gdurl.com/QdSq',
+        path: require('_assets/images/6/11.jpeg'),
         text: '8',
         },
         {name:'الدرس الثاني عشر',
         id:12,
         audiPath: 'https://gdurl.com/IrCu',
         audiPath2: 'https://gdurl.comظTBZi',
+        path: require('_assets/images/6/12.jpeg'),
         text: '8',
         },
         {name:'الدرس الثالث عشر',
         id:13,
         audiPath: 'https://gdurl.com/QE8k',
+        path: require('_assets/images/6/13.jpeg'),
         text: '8',
-        path: require('_assets/images/1/13.jpg'),
       },
  
       ],
@@ -140,7 +149,7 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>سلسلة المرأة الصالحة</Text>
-
+          <SafeAreaView>
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -150,7 +159,6 @@ class home extends Component {
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
@@ -161,6 +169,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </SafeAreaView>
         </ImageBackground>
       </View>
     );
@@ -185,7 +194,6 @@ const styles = StyleSheet.create({
   },
   flatview: {
     justifyContent: 'center',
-    padding: 0,
     borderRadius: 2,
     margin: 10,
     marginHorizontal: 10,
@@ -193,6 +201,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     borderRadius: 10,
+    paddingBottom:100,
   },
   name: {
     fontFamily: 'ArbFONTS-Monadi',

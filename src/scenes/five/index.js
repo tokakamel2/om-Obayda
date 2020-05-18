@@ -20,7 +20,7 @@ class home extends Component {
     super(prpos);
     this.state = {
       FlatListItems: [
-
+        {name:'سورة الفاتحة',id:'alf'},
         {name:'جزء تبارك', id:'tas1'}, //done
         {name:'جزء عم',id:'tas2'},    //done
      

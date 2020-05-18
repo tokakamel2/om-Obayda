@@ -10,10 +10,12 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  SafeAreaView
+  SafeAreaView,
+  Linking
 } from 'react-native';
 import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(prpos) {
@@ -24,7 +26,10 @@ class home extends Component {
         {name:'الداعيات إلى الله', id:'da1'}, 
         {name:'حلية طالب العلم',id:'da2'},    
         {name:'صفات الداعية',id:'da3'},//done
-        
+        {
+          name:'أسئلة متعلقة بالسلسلة.. لا تفتحيها إلا بعد الانتهاء من السلسلة',
+          url:'https://forms.gle/XBfm659RYCWvavF96'
+        }
 
       ],
     };
@@ -54,17 +59,18 @@ class home extends Component {
           height: '100%',
           opacity: 100,
         }}>
-      
+          <ScrollView>
       <FlatList
           
           data={this.state.FlatListItems}
           showsVerticalScrollIndicator={false}
         
           renderItem={({item}) =>
-          <TouchableOpacity   onPress={() => this.props.navigation.navigate(item.id)}  >
+          <TouchableOpacity   onPress={() =>{if(!item.url){ this.props.navigation.navigate(item.id)}else{Linking.openURL(item.url)}}}  >
           <View style={styles.flatview}>
             <Text style={styles.name}>{item.name}</Text>
-            
+            {item.url && <TouchableOpacity onPress={() =>{ Linking.openURL(item.url)}}><Text style={{paddingBottom:50, fontSize:18}}>اضغطي هنا حتى يتم إرسالك للأسئلة </Text></TouchableOpacity>}   
+
           </View>
           </TouchableOpacity>
         }
@@ -73,7 +79,7 @@ class home extends Component {
        
         
        />
-       
+       </ScrollView>
       </ImageBackground>
       </View>
     );

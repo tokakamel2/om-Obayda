@@ -12,10 +12,10 @@ import {
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
+
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -211,7 +211,10 @@ class home extends Component {
             opacity: 100,
           }}>
           <Text style={styles.title}>سير الصحابيات</Text>
-
+          <ScrollView>
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/1DwhsCCA-zwxHc7wHaf2BcCvQptPHnIJr/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>كتاب صحابيات حول الرسول</Text>
+           </TouchableOpacity>  
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -232,6 +235,7 @@ class home extends Component {
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );

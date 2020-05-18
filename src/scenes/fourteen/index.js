@@ -12,10 +12,9 @@ import {
   SafeAreaView,
   
 } from 'react-native';
-import {Card} from 'react-native-elements';
 import PlayerScreen from 'react-native-sound-playerview';
-import Accordian from '_atoms/Accordian';
-import * as RNFS from 'react-native-fs';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 class home extends Component {
   constructor(props) {
@@ -28,152 +27,177 @@ class home extends Component {
           audiPath: 'https://gdurl.com/dTtn',
           isOpend: false,
           
+          
           },
         {
           name: 'ترجمة الإمام النووي',
           id: 2,
           audiPath: 'https://gdurl.com/qX2a',
-        
+     
          
         },
         {
           name: 'ترجمة الشيخ بن عثيمين',
           id: 3,
           audiPath: 'https://gdurl.com/75ga',
-         
+       
         },
         {
           name: 'شرح حديث إنما الأعمال بالنيات',
           id: 4,
           audiPath: 'https://gdurl.com/C6Uw',
           text: '4',
+          path: require('_assets/images/14/1.jpeg'),
         },
         {
           name: 'الحديث الثاني من الأربعون النووية',
           id: 5,
           audiPath: 'https://gdurl.com/K74j',
           text: '5',
+          path: require('_assets/images/14/2.jpeg'),
         },
         {
           name: 'الحديث الثالث',
           id: 6,
           audiPath: 'https://gdurl.com/tbUz',
           text: '6',
+          path: require('_assets/images/14/3.jpeg'),
         },
         {
           name: 'الحديث الرابع',
           id: 7,
           audiPath: 'https://gdurl.com/syhoG',
           text: '7',
+          path: require('_assets/images/14/4.jpeg'),
         },
         {
           name:'الحديث الخامس',
           id: 8,
           audiPath: 'https://gdurl.com/EYzk',
           text: '8',
+          path: require('_assets/images/14/5.jpeg'),
         },
         {
         name:'الحديث السادس',
         id:9,
         audiPath: 'https://gdurl.com/OwrM',
         text: '8',
+        path: require('_assets/images/14/6.jpeg'),
         },
         {
         name:'الحديث السابع',
         id:10,
         audiPath: 'https://gdurl.com/29qG',
         text: '8',
+        path: require('_assets/images/14/7.jpeg'),
         },
         {
         name:'الحديث الثامن',
         id:11,
         audiPath: 'https://gdurl.com/PTmZ',
         text: '8',
+        path: require('_assets/images/14/8.jpeg'),
         },
         {
         name:'الحديث التاسع',
         id:12,
         audiPath: 'https://gdurl.com/4Kh4',
         text: '8',
+        path: require('_assets/images/14/9.jpeg'),
         },
         {
          name:'الحديث العاشر ',
         id:13,
         audiPath: 'https://gdurl.com/tK_0',
         text: '8',
+        path: require('_assets/images/14/10.jpeg'),
       },
         {
         name:'الحديث الحادي عشر ', 
         id:14,
         audiPath: 'https://gdurl.com/3Qhb',
         text: '8',
-        
+        path: require('_assets/images/14/11.jpeg'),
       },
     
         {name:'الحديث الثاني عشر ',
         id:16,
         audiPath: 'https://gdurl.com/k4zdC',
         text: '8',
+        path: require('_assets/images/14/12.jpeg'),
       },
       {name:'الحديث الثالث عشر ',
       id:16,
       audiPath: 'https://gdurl.com/1Fwk',
       text: '8',
+      path: require('_assets/images/14/13.jpeg'),
     },
     {name:'الحديث الرابع عشر ',
     id:16,
     audiPath: 'https://gdurl.com/XPUi',
     text: '8',
+    path: require('_assets/images/14/14.jpeg'),
   },
   {name:'الحديث الخامس عشر ',
   id:16,
   audiPath: 'https://gdurl.com/Emhp',
   text: '8',
+  path: require('_assets/images/14/15.jpeg'),
 },
 {name:'الحديث السادس عشر',
 id:16,
 audiPath: 'https://gdurl.com/Nfk8',
 text: '8',
+path: require('_assets/images/14/16.jpeg'),
 },
 {name:'الحديث السابع عشر',
 id:16,
 audiPath: 'https://gdurl.com/OX9s',
 text: '8',
+path: require('_assets/images/14/17.jpeg'),
 },
 {name:'الحديث الثامن عشر',
 id:16,
 audiPath: 'https://gdurl.com/Ypsw',
 text: '8',
+path: require('_assets/images/14/18.jpeg'),
 },
 {name:'الحديث التاسع عشر',
 id:16,
 audiPath: 'https://gdurl.com/NTyK',
 text: '8',
+path: require('_assets/images/14/19.jpeg'),
 },
 {name:'الحديث العشرون ',
 id:16,
 audiPath: 'https://gdurl.com/ZKLr',
+
 text: '8',
+path: require('_assets/images/14/20.jpeg'),
 },
 {name:'الحديث الواحد والعشرون',
 id:16,
 audiPath: 'https://gdurl.com/eHR7',
 text: '8',
+path: require('_assets/images/14/21.jpeg'),
 },
 {name:'الحديث الثاني والعشرون',
 id:16,
 audiPath: 'https://gdurl.com/QjMX',
 text: '8',
+path: require('_assets/images/14/22.jpeg'),
 },
 {name:'الحديث الثالث والعشرون',
 id:16,
 audiPath: 'https://gdurl.com/rpz6',
 text: '8',
+path: require('_assets/images/14/23.jpeg'),
 },
 {name:'الحديث الرابع والعشرون',
 id:16,
 audiPath: 'https://gdurl.com/LGnY',
 text: '8',
+path: require('_assets/images/14/24.jpeg'),
 },
       ],
     };
@@ -213,8 +237,11 @@ text: '8',
             height: '100%',
             opacity: 100,
           }}>
-          <Text style={styles.title}>حلية طالب العلم</Text>
-
+          <Text style={styles.title}>الأربعون النووية</Text>
+          <ScrollView>
+          <TouchableOpacity  onPress={() =>{ Linking.openURL('https://drive.google.com/file/d/163x3-mTFBr1QmGSyq9_mWal3y5mqjAno/view?usp=sharing')}}>
+           <Text style={{  borderRadius: 25, margin:15,backgroundColor:'#371921' ,fontFamily: 'ArbFONTS-Monadi',  fontSize: 25, color: 'white',paddingBottom: 0, textAlign: 'center'}}>لقراءة أو تحميل كتاب شرح الأربعين النووية</Text>
+           </TouchableOpacity>  
           <FlatList
             data={this.state.FlatListItems}
             showsVerticalScrollIndicator={false}
@@ -224,7 +251,6 @@ text: '8',
               <Text style={styles.name}>{item.name}</Text>
            
            
-            {item.path && <Text style={styles.text}>{item.text}</Text> } 
               <PlayerScreen filepath={item.audiPath}/>
             {item.audiPath2 && <PlayerScreen filepath={item.audiPath2}/>} 
             {item.audiPath3 && <PlayerScreen filepath={item.audiPath3}/>} 
@@ -235,6 +261,7 @@ text: '8',
             
             keyExtractor={item => item.id}
           />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
