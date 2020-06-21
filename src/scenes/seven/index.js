@@ -159,7 +159,7 @@ class home extends Component {
       },
         {name:'صور من حياة النبي واصحابه في التواضع',
         id:23,
-        audiPath: 'https://gdurl.com//nZ8m',
+        audiPath: 'https://gdurl.com/nZ8m',
         audiPath2: 'https://gdurl.com/C3Hm',
         text: '8',
       },

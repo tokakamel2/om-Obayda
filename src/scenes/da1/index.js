@@ -396,7 +396,7 @@ class home extends Component {
         {
           name: 'كيف تكوني نعم العبد',
           id: 59,
-          audiPath: 'https://gdurl.com//UfEK',
+          audiPath: 'https://gdurl.com/UfEK',
     
         },
         {

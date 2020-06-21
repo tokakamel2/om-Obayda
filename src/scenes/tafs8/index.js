@@ -25,8 +25,7 @@ class home extends Component {
         {
           name: 'سورة النبأ',
           id: 1,
-          audiPath: 'https://gdurl.com/n-ZE',
-          audiPath2:'https://gdurl.com/p3aX',
+          audiPath: 'https://gdurl.com/fsBW',
       
           isOpend: false,
           
@@ -34,158 +33,163 @@ class home extends Component {
         {
           name: 'سورة النازعات',
           id: 2,
-          audiPath: 'https://gdurl.com/IlsQ',
-          audiPath2: 'https://gdurl.com/qqI4',
+          audiPath: 'https://gdurl.com/uBAx',
         
          
         },
         {
           name: 'سورة عبس',
           id: 3,
-          audiPath: 'https://gdurl.com/UmN0',
-          audiPath2: 'https://gdurl.com/8NTh',
+          audiPath: 'https://gdurl.com/8q0e',
          
         },
         {
           name: 'سورة التكوير والإنفطار',
           id: 4,
-          audiPath: 'https://gdurl.com/JlMk',
-          audiPath2: 'https://gdurl.com/fbfp',
+          audiPath: 'https://gdurl.com/I4FB',
     
         },
         {
           name: 'سورة المطففين',
           id: 5,
-          audiPath: 'https://gdurl.com/nZoI',
-          audiPath2: 'https://gdurl.com/DwiW',
+          audiPath: 'https://gdurl.com/wH0g',
      
         },
         {
           name: 'سورة الإنشقاق',
           id: 6,
-          audiPath: 'https://gdurl.com/8mCJ',
-          audiPath2: 'https://gdurl.com/hYFo',
-          audiPath3: 'https://gdurl.com/hYFo',
+          audiPath: 'https://gdurl.com/0BvC',
+          audiPath2: 'https://gdurl.com/rnxD',
+          audiPath3: 'https://gdurl.com/iAZn',
          
          
         },
         {
           name: 'سورة البروج',
           id: 7,
-          audiPath: 'https://gdurl.com/8yGb',
+          audiPath: 'https://gdurl.com/TEtJb',
+          audiPath2: 'https://gdurl.com/T7N1',
+          audiPath3: 'https://gdurl.com/uhUc',
+          audiPath4: 'https://gdurl.com/QhqS',
 
         },
         {
           name: 'سورة الطارق',
           id: 7,
-          audiPath: 'https://gdurl.com/2jh7',
-          audiPath2: 'https://gdurl.com/xu8y',
+          audiPath: 'https://gdurl.com/3UfJ',
+          audiPath2: 'https://gdurl.com/GAm6',
 
      
         },
         {
           name: 'سورة الأعلى',
           id: 7,
-          audiPath: 'https://gdurl.com/2jh7',
-          audiPath2: 'https://gdurl.com/xu8y',
+          audiPath: 'https://gdurl.com/inxA',
+          audiPath2: 'https://gdurl.com/Afez',
+          audiPath3: 'https://gdurl.com/RXqI',
+
 
      
         },
         {
           name: 'سورة الغاشية',
           id: 7,
-          audiPath: 'https://gdurl.com/hGff',
+          audiPath: 'https://gdurl.com/Bmlg',
+          audiPat2: 'https://gdurl.com/Kc6c',
+
         },
         {
           name: 'سورة الفجر',
           id: 7,
-          audiPath: 'https://gdurl.com/TC-6',
-          audiPath2: 'https://gdurl.com/YMhE',
+          audiPath: 'https://gdurl.com/Zr_6G',
+          audiPath2: 'https://gdurl.com/Je9V',
         },
         {
           name: 'سورة البلد',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/PxyW',
+          audiPath2: 'https://gdurl.com/32Pg',
+
     
         },
        
         {
           name: 'سورة الشمس',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/O6Iy',
     
         },
         {
           name: 'سورة الليل',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/dgwu',
     
         },
         {
           name: 'سورة الضحى',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/uEh4',
     
         },
         {
           name: 'سورة الشرح',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/IFA3',
     
         },
         {
           name: 'سورة التين و العلق',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/P4Uj',
     
         },
         {
           name: ' سورة القدر ',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/5R7E',
     
         },
         {
           name: 'سورة البينة',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/VadM',
     
         },
         {
           name: 'سورة الزلزلة و العاديات',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/2O6A',
     
         },
         {
           name: 'سورة القارعة والتكاثر',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/FlNS',
     
         },
         {
           name: 'سورة العصر و الهمزة والفيل',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/sTwL',
     
         },
      
         {
           name: 'سورة قريش والماعون والكوثر',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/mTlp',
     
         },
         {
           name: 'سورة الكافرون والنصر والمسد',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/bbwP',
     
         },
         {
           name: 'سورة الإخلاص الفلق والناس',
           id: 7,
-          audiPath: 'https://gdurl.com/LIKZ',
+          audiPath: 'https://gdurl.com/c1wo',
     
         },
      

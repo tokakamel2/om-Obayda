@@ -107,8 +107,8 @@ class home extends Component {
         },
         {name:'الدرس الثاني عشر',
         id:12,
-        audiPath: 'https://gdurl.com/EcR4',
-        audiPath2:'https://gdurl.com/ozyC',
+        audiPath2: 'https://gdurl.com/EcR4',
+        audiPath:'https://gdurl.com/ozyC',
         text: '8',
         },
         {name:'الدرس الثالث عشر',
@@ -169,8 +169,8 @@ class home extends Component {
       {
         name: 'الدرس الواحد والعشرون',
         id: 5,
-        audiPath: 'https://gdurl.com/kZtX',
-        audiPath2:'https://gdurl.com/Nj5T',
+        audiPath2: 'https://gdurl.com/kZtX',
+        audiPath:'https://gdurl.com/Nj5T',
         text: '5',
       },
       {
@@ -219,8 +219,8 @@ class home extends Component {
     },
       {name:'الدرس الثلاثون ',
       id:14,
-      audiPath: 'https://gdurl.com/6JVb',
-      audiPath2:'https://gdurl.com/hUGDV',
+      audiPath2: 'https://gdurl.com/6JVb',
+      audiPath:'https://gdurl.com/hUGDV',
       text: '8',
       
     },
@@ -245,8 +245,8 @@ class home extends Component {
     {
       name: 'الدرس الرابع والثلاثون',
       id: 2,
-      audiPath: 'https://gdurl.com/qtJP',
-      audiPath2:'https://gdurl.com/aBkv',
+      audiPath2: 'https://gdurl.com/qtJP',
+      audiPath:'https://gdurl.com/aBkv',
     
      
     },

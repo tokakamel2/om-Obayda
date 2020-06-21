@@ -71,7 +71,7 @@ class home extends Component {
         {
           name: 'سورة المزمل',
           id: 7,
-          audiPath: 'https://gdurl.com//Md6G',
+          audiPath: 'https://gdurl.com/Md6G',
 
         },
         {

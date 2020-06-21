@@ -81,9 +81,7 @@ class home extends Component {
         {name:'الوضوء الصحيح بالفيديو',
         vid:'https://youtu.be/K3WcrVH82yI',
          },
-         {name:'أخطاء الوضوء فيديو',
-         vid:'https://youtu.be/1Xx3J7Lw1yo',
-          },
+        
         {
           name: 'باب المسح على الخفين',
           id: 8,
@@ -93,7 +91,7 @@ class home extends Component {
         {name:'باب الغسل',
         id:9,
         audiPath: 'https://gdurl.com/wjdl',
-        audiPath2:'https://gdurl.com//E7zu',
+        audiPath2:'https://gdurl.com/E7zu',
         text: '8',
         },
         {name:'باب التيمم',
